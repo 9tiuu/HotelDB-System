@@ -1,0 +1,334 @@
+/* MAIN COLORS */
+
+:root {
+    --color1: #002E7B;
+    --color2: #0043B6;
+    --color3: #5271FF;
+    --color4: #1CDAFF;
+}
+
+/* MAIN STYLES */
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    background: url(https://img.freepik.com/vector-gratis/gradiente-desenfoque-fondo-abstracto-azul-rosa_53876-117324.jpg?size=626&ext=jpg&ga=GA1.1.1687694167.1713571200&semt=sph);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 96vh;
+}
+
+.background-system {
+    display: flex;
+    align-items: center;
+    background: #ededfc;
+    border: solid 10px #ededfc;
+    box-shadow: 0 20px 15px 0 #0000002d;
+    border-radius: 30px;
+    height: 42rem;
+    width: 88rem;
+    gap: 8px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border-radius: 30px;
+    height: 42rem;
+    width: 15rem;
+}
+
+.main-system {
+    background: #ffffff;
+    border-radius: 30px;
+    height: 42rem;
+    width: 88rem;
+    position: relative;
+}
+
+.main-body {
+    padding: 1rem 2rem;
+    height: 42rem;
+}
+
+.icon-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0 2rem 0;
+    width: 100%;
+}
+
+.menu-links {
+    height: 27rem;
+    width: 100%;
+}
+
+.menu-links ul, .other-links ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.menu-button {
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 1.2em 2rem;
+    font-weight: bold;
+    list-style: none;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.menu-button:hover {
+    background-color: #dee4ff;
+    border-radius: 1rem;
+}
+
+.selected {
+    background-color: #dee4ff;
+    border-radius: 1rem;
+    color: var(--color2);
+}
+
+.noselected {
+    background-color: transparent;
+    color: #000000;
+}
+
+.sign-off:hover {
+    background-color: transparent;
+    color: #e73939;
+}
+
+.icon-home {
+    padding: 0 0.8rem 0 0;
+    width: 14%;
+}
+
+/* Option information ------ START */
+
+.home-info {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    height: 40rem;
+    width: 70.8rem;
+}
+
+.hosted-info, .bedrooms-info,
+.record-info, .config-info {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    height: 40rem;
+    width: 70.8rem;
+}
+
+.home-info.active, .hosted-info.active, 
+.bedrooms-info.active, .record-info.active,
+.config-info.active {
+    display: flex;
+}
+
+/* Option information ------ END */
+
+.option-title {
+    color: var(--color2);
+}
+
+.data {
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.lists-bedrooms {
+    display: grid;
+    place-items: center;
+
+    background-color: #f9faff;
+    border: solid 2px #e9e9ff;
+    border-bottom-width: 6px;
+    border-radius: 1rem;
+    width: 50rem;
+    height: 32rem;
+}
+
+.hosted-clients {
+    display: grid;
+    place-items: center;
+
+    background-color: #f9faff;
+    border: solid 2px #e9e9fa;
+    border-bottom-width: 6px;
+    border-radius: 1rem;
+    width: 20rem;
+    height: 32rem;
+}
+
+.list-of-hosted, .list-of-bedrooms,
+.record-of-hosted, .configuration {
+    display: grid;
+    place-items: center;
+
+    background-color: #f9faff;
+    border: solid 2px #e9e9fa;
+    border-bottom-width: 6px;
+    border-radius: 1rem;
+    width: 80rem;
+    height: 32rem;
+}
+
+/* USER ACCOUNT */
+
+.user-account {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-align: left;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+.user-icon-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info-section {
+    margin-left: 0.5rem;
+}
+
+.user-name, .user-rol {
+    margin: 0;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.user-rol {
+    font-size: 0.8rem;
+    color: #b1b1b1;
+}
+
+/* ALERT NOTIFICATION */
+
+.alert {
+    display: none; /* none */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.alert.active {
+    display: flex;
+}
+
+.alert-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.527);
+    border-bottom: solid 0.5rem var(--color2);
+    height: 15rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+@keyframes alert-animation {
+    from { margin-bottom: 200rem; } 
+    to { margin-bottom: 0rem; }
+}
+
+.alert-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.alert-text {
+    text-align: center;
+}
+
+.alert h2 {
+    margin: 0 0 0 0.5rem;
+}
+
+.alert-text p {
+    margin-bottom: 1rem;
+    color: #757575;
+}
+
+.alert-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.exitButton {
+    background-color: #fd4d4d;
+}
+
+.cancelButton {
+    background-color: #5271FF;
+}
+
+.okButton {
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    height: 2.2rem;
+    width: 7rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.okButton:hover {
+    /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.226); */
+    box-shadow: 0 8px 20px 0 rgb(209, 181, 255);
+    transition: 0.3s;
+}
+
+.cancelButton:hover {
+    background-color: #405ee4;
+}
+
+.exitButton:hover {
+    background-color: #e73939;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>HotelDB | Login</title>
+        <link rel="website icon" href="img/HotelDB-vector.png" type="img/x-icon"> <!-- Tu logo en: href="aqui" -->
+    
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link href="css/login.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <main>
+            <!-- Estructura del login -->
+            <section class="login-page">
+                <div class="login"> 
+                    <div class="login-card">
+                        <div class="login-body"> 
+
+                            <div class="icon-section">
+                                <img src="img/HotelDB-newIcon.png" alt="" class="icon" style="width: 50%;">
+                            </div>
+                            
+                            <h2 class="title text">Inicio de sesión</h2>
+
+                            <input type="text" class="login-input" name="username" id="username" placeholder="Nombre de usuario" autocomplete="on">
+                            <input type="password" class="login-input" name="password" id="password" placeholder="Contraseña" autocomplete="off">
+
+                            <div class="boton-section">
+                                <button id="loginButton" class="login-button" value="Iniciar sesión">Iniciar sesión</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Notificacion de alerta -->
+            <section class="alert">
+                <div class="alert-card">
+                    <div class="alert-info">
+                        <img src="img/alert-icons/error.png" class="error-icon" alt="" width="80px" height="80px">
+                        <div class="alert-text">
+                            <h2 class="alertTitle">Oops!</h2>
+                            <p class="alertText">Error description</p>
+                            <input type="submit" value="Ok" class="okButton" id="okButton">
+                        </div>
+                    </div>
+                </div>          
+            </section>
+
+        </main>
+        <script src="js/login.js"></script>
+    </body>
+</html>

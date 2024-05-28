@@ -1,0 +1,197 @@
+/*  Login styles  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color1: #002E7B;
+    --color2: #0043B6;
+    --color3: #5271FF;
+    --color4: #1CDAFF;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    background: url(https://img.freepik.com/vector-gratis/gradiente-desenfoque-fondo-abstracto-azul-rosa_53876-117324.jpg?size=626&ext=jpg&ga=GA1.1.1687694167.1713571200&semt=sph);
+    background-position: center ;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.login-page {
+    position: relative;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 10px 15px 0 #0000004e;
+    border-bottom: solid 5px var(--color2);
+    border-radius: 25px;
+    display: flex;
+    width: 30rem;
+    height: 600px;
+    gap: 80px;
+}
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    width: 100%;
+    gap: 1.2em;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.icon-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.text {
+    text-align: center;
+}
+
+.login-input, .login-button {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.login-input {
+    background: #ffffff !important;
+    border: solid 2px #e0e0e0;
+    border-radius: 50px;
+    padding: 1em 1.5em;
+    transition: 0.3s;
+    outline: none;
+    
+}
+
+.login-input:focus {
+    border: solid 2px var(--color2);
+    transition: 0.3s;
+}
+
+.error { /* test */
+    border: 1px solid #ff0000;
+}
+
+.boton-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-button {
+    background: #3f3f3f;
+    border-radius: 5rem;
+    color: #ffffff;
+    font-weight: bold;
+    width: 80%;
+    height: 40px;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    box-shadow: 0 8px 20px 0 rgb(209, 181, 255);
+    background: #131313;
+    transition: 0.3s;
+}
+
+.alert {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.alert.active {
+    display: flex;
+}
+
+.alert-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.527);
+    border-bottom: solid 0.5rem #fd4d4d;
+    height: 22rem;
+    width: 20rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+@keyframes alert-animation {
+    from { margin-bottom: 200rem; } 
+    to { margin-bottom: 0rem; }
+}
+
+.alert-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.error-icon {
+    margin-bottom: 2rem;
+}
+
+.alert-text {
+    text-align: center;
+}
+
+.alert h2 {
+    margin-bottom: 0.5rem;
+}
+
+.alert-text p {
+    margin-bottom: 1rem;
+    color: #757575;
+}
+
+.okButton {
+    background-color: #fd4d4d;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 5rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.okButton:hover {
+    box-shadow: 0 8px 20px 0 rgb(209, 181, 255);
+    background-color: #e73939;
+    transition: 0.3s;
+}
