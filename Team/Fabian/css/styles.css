@@ -184,7 +184,7 @@ body {
 
 .list-of-hosted, .list-of-bedrooms,
 .record-of-hosted, .configuration {
-    display: grid;
+    
     place-items: center;
 
     background-color: #f9faff;
@@ -230,7 +230,70 @@ body {
     font-size: 0.8rem;
     color: #b1b1b1;
 }
+/* Hosted */
 
+.lista_botones{
+    display: flex;
+    margin: 1rem;
+}
+.crear{
+    color: #dee4ff;
+    font-family: "Nunito", sans-serif;
+    background: #405ee4;
+    border-radius: 1rem;
+    border: none;
+    height: 3.3rem;
+    width: 9rem;
+    font-size: .8rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.527);
+}
+.texto{
+    margin: .9rem;
+    border-radius: 1rem;
+    padding: .5rem;
+    width: 22rem;
+    height: 1rem;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.527);
+    border: none;
+    
+}
+.plantilla_huespedes{
+    margin: 1rem;
+    border: solid 2px var(--color1);
+    border-radius: .5rem;
+    height: 25rem;
+    
+}
+.plantilla_huespedes li{
+    font-family: "Nunito", sans-serif;
+    border: none;
+    border-radius: 2rem;
+    display: flex;
+    padding: 1rem;
+    height: 1.2rem;
+    justify-content: space-between;
+    margin: .8rem;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.527);
+}
+.actualizar, .eliminar{
+    border: none;
+    font-family: "Nunito", sans-serif;
+    color: #dee4ff;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: .25rem;
+    
+}
+.actualizar{
+    background-color: #5271FF;
+
+}
+.eliminar{
+    background-color: #e73939;
+}
 /* ALERT NOTIFICATION */
 
 .alert {
