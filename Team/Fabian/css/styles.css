@@ -186,12 +186,12 @@ body {
 .record-of-hosted, .configuration {
     
     place-items: center;
-
+    padding: 1rem;
     background-color: #f9faff;
     border: solid 2px #e9e9fa;
     border-bottom-width: 6px;
     border-radius: 1rem;
-    width: 80rem;
+    width: 69rem;
     height: 32rem;
 }
 
@@ -234,58 +234,63 @@ body {
 
 .lista_botones{
     display: flex;
-    margin: 1rem;
+    margin: 0rem;
 }
 .crear{
-    color: #dee4ff;
+    color: #ffffff;
     font-family: "Nunito", sans-serif;
     background: #405ee4;
     border-radius: 1rem;
     border: none;
-    height: 3.3rem;
+    height: 2.3rem;
     width: 9rem;
     font-size: .8rem;
-    padding: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.527);
+    
 }
 .texto{
     margin: .9rem;
     border-radius: 1rem;
-    padding: .5rem;
+    padding: .5rem 1rem;
     width: 22rem;
-    height: 1rem;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.527);
-    border: none;
+    height: 1.3rem;
     
+    border: solid 2px #b0b0b0;
+    
+}
+.table_border{
+    padding: 1rem;
+    height: 23rem;
+    max-width: 100%;
+    border: solid 2px #b0b0b0;
+    background-color: #ffffff;
+    border-radius: 1rem;
 }
 .plantilla_huespedes{
-    margin: 1rem;
-    border: solid 2px var(--color1);
-    border-radius: .5rem;
-    height: 25rem;
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+}
+th, td{
+    padding: 0.5rem 1rem;
+    margin: 0;
+    border-bottom: solid 1px #b0b0b0;
     
 }
-.plantilla_huespedes li{
-    font-family: "Nunito", sans-serif;
-    border: none;
-    border-radius: 2rem;
-    display: flex;
-    padding: 1rem;
-    height: 1.2rem;
-    justify-content: space-between;
-    margin: .8rem;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.527);
+th{
+    text-align: left;
+    
 }
 .actualizar, .eliminar{
     border: none;
     font-family: "Nunito", sans-serif;
     color: #dee4ff;
     font-weight: bold;
-    border-radius: 1rem;
-    padding: .25rem;
-    
+    border-radius: .2rem;
+    cursor: pointer;
+    width: 4.2rem;
+    height: 2rem;
 }
 .actualizar{
     background-color: #5271FF;
