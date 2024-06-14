@@ -184,14 +184,14 @@ body {
 
 .list-of-hosted, .list-of-bedrooms,
 .record-of-hosted, .configuration {
-    display: grid;
+    
     place-items: center;
-
+    padding: 1rem;
     background-color: #f9faff;
     border: solid 2px #e9e9fa;
     border-bottom-width: 6px;
     border-radius: 1rem;
-    width: 80rem;
+    width: 69rem;
     height: 32rem;
 }
 
@@ -230,7 +230,75 @@ body {
     font-size: 0.8rem;
     color: #b1b1b1;
 }
+/* Hosted */
 
+.lista_botones{
+    display: flex;
+    margin: 0rem;
+}
+.crear{
+    color: #ffffff;
+    font-family: "Nunito", sans-serif;
+    background: #405ee4;
+    border-radius: 1rem;
+    border: none;
+    height: 2.3rem;
+    width: 9rem;
+    font-size: .8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+.texto{
+    margin: .9rem;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    width: 22rem;
+    height: 1.3rem;
+    
+    border: solid 2px #b0b0b0;
+    
+}
+.table_border{
+    padding: 1rem;
+    height: 23rem;
+    max-width: 100%;
+    border: solid 2px #b0b0b0;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.plantilla_huespedes{
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+}
+th, td{
+    padding: 0.5rem 1rem;
+    margin: 0;
+    border-bottom: solid 1px #b0b0b0;
+    
+}
+th{
+    text-align: left;
+    
+}
+.actualizar, .eliminar{
+    border: none;
+    font-family: "Nunito", sans-serif;
+    color: #dee4ff;
+    font-weight: bold;
+    border-radius: .2rem;
+    cursor: pointer;
+    width: 4.2rem;
+    height: 2rem;
+}
+.actualizar{
+    background-color: #5271FF;
+
+}
+.eliminar{
+    background-color: #e73939;
+}
 /* ALERT NOTIFICATION */
 
 .alert {
@@ -331,83 +399,4 @@ body {
 
 .exitButton:hover {
     background-color: #e73939;
-}
-
-
-/* tabla de habitaciones */
-
-
-.prin {
-    display: flex;
-    
-}
-
-.arriba{
-    position: absolute;
-    bottom: 26rem;
-    left: 1rem;
-}
-.boton {
-    position: absolute;
-    bottom: 31rem;
-    left: 1rem;
-    
-}
-.verdad{
-    cursor: pointer;
-    background-color: #0043B6;
-    color: aliceblue;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px;
-}
-
-.cosa {
-    position: absolute;
-    bottom: 15rem;
-    left: 1rem;
-    top: 14rem;
-    
-    
-}
-
-.tabla {
-    
-    width: 150%;
-    border: 1px solid gray ;
-    border-radius: 5px;
-    padding: 0.5rem;
-}
-.tabla th  {
-    font-size: 1.1rem;
-    padding: 8px;
-    text-align: left;
-   
-}
-.tabla td{
-    padding: 8px;
-    
-}
-
-.azulboton{
-    background-color:dodgerblue;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: aliceblue;
-    cursor: pointer;
-}
-.rojoboton{
-    background-color:red;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: aliceblue;
-    cursor: pointer;
-}
-
-.linearecta td, th{
-    border-bottom: 1px solid rgb(189, 187, 187); 
-    padding: 0.5rem;
 }
