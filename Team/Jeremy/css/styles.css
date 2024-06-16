@@ -130,8 +130,17 @@ body {
     width: 70.8rem;
 }
 
+.users-info {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    height: 40rem;
+    width: 70.8rem;
+}
+
 .hosted-info, .bedrooms-info,
-.record-info, .config-info {
+.record-info, .config-info, .audit-info {
     display: none;
     flex-direction: column;
     background: #ffffff;
@@ -140,11 +149,7 @@ body {
     width: 70.8rem;
 }
 
-.home-info.active, .hosted-info.active, 
-.bedrooms-info.active, .record-info.active,
-.config-info.active {
-    display: flex;
-}
+.active { display: flex; }
 
 /* Option information ------ END */
 
@@ -183,17 +188,46 @@ body {
 }
 
 .list-of-hosted, .list-of-bedrooms,
-.record-of-hosted, .configuration {
-    display: grid;
-    place-items: center;
-
+.record-of-hosted, .configuration,
+.users-system, .auditorit {
+    padding: 1rem;
     background-color: #f9faff;
     border: solid 2px #e9e9fa;
     border-bottom-width: 6px;
     border-radius: 1rem;
-    width: 80rem;
+    width: 69rem;
     height: 32rem;
 }
+
+.users-system {
+    display: flex;
+    flex-direction: column;
+}
+
+/* AUDITORIT USERS */
+
+.audit-data { padding: 0.5rem; }
+
+.data-user {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    color: #717483;
+    padding: 0 1rem;
+}
+
+.user-add-data { background: #edffeb; }
+.adduser { color: #347234; }
+
+.user-delete-data { background: #ffebeb; }
+.deleteuser { color: #a34f4f;}
+
+.user-edit-data { background: #ebefff; }
+.edituser { color: #4f68a3; }
+
+.user-name-data { color: #000000; }
+.info-data { font-size: 10px; }
 
 /* USER ACCOUNT */
 
@@ -229,6 +263,110 @@ body {
 .user-rol {
     font-size: 0.8rem;
     color: #b1b1b1;
+}
+/* Hosted */
+
+.lista_botones{
+    display: flex;
+    margin: 0rem;
+}
+.crear{
+    color: #ffffff;
+    font-family: "Nunito", sans-serif;
+    background-color: #5271FF;
+    transition: 0.3s;
+    border-radius: 1rem;
+    border: none;
+    height: 2.3rem;
+    width: 9rem;
+    font-size: .8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;  
+}
+
+.crear:hover {
+    background-color: #374daf;
+    box-shadow: 0 5px 20px 0 rgb(185, 181, 255);
+    transition: 0.3s;
+}
+
+.buscar {
+    margin: .9rem;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    width: 22rem;
+    height: 1.3rem;  
+    border: solid 2px #e9e9fa;  
+    outline: none;
+    transition: 0.3s;
+}
+
+.buscar:focus {
+    border: solid 2px #c8c8d6;  
+    transition: 0.3s;
+}
+
+.table_border{
+    padding: 1rem;
+    height: 23rem;
+    max-width: 100%;
+    border: solid 2px #e9e9fa;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.plantilla_huespedes{
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+}
+
+thead > tr {
+    font-weight: bold;
+    color: var(--color2);
+}
+
+tbody > tr {
+    color: #717483;
+}
+
+th, td{
+    padding: 0.5rem 1rem;
+    margin: 0;
+    border-bottom: solid 1px #e9e9fa;
+    
+}
+th{
+    text-align: left;
+    
+}
+.actualizar, .eliminar{
+    border: none;
+    font-family: "Nunito", sans-serif;
+    color: #dee4ff;
+    font-weight: bold;
+    border-radius: .2rem;
+    cursor: pointer;
+    width: 4.2rem;
+    height: 2rem;
+}
+.actualizar{
+    background-color: #5271FF;
+    transition: 0.3s;
+}
+
+.actualizar:hover {
+    background-color: #374daf;
+    transition: 0.3s;
+}
+
+.eliminar {
+    background-color: #e73939;
+    transition: 0.3s;
+}
+
+.eliminar:hover {
+    background-color: #a22525;
+    transition: 0.3s;
 }
 
 /* ALERT NOTIFICATION */
