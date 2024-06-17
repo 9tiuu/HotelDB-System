@@ -17,3 +17,15 @@ cancelButton.addEventListener('click', () => {
 exitButton.addEventListener('click', () => {
     window.location = 'login.html';
 });
+
+const userAccount = document.getElementById('account');
+const profileButton = document.getElementById('rButton');
+const userProfile = document.querySelector('.user-profile');
+
+userAccount.addEventListener('click', () => {
+    userProfile.classList.add('active');
+});
+
+profileButton.addEventListener('click', () => {
+    userProfile.classList.remove('active');
+});
