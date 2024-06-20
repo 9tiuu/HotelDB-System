@@ -95,46 +95,50 @@
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el nombre del pasajero"> 
+                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el ID del Pasajero"> 
                                     </div>
                                 </div>
                                 <div class="table_border">
                                     <table class="plantilla_huespedes" id="table">
                                         <thead>
                                             <tr>
+                                                <td>ID</td>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                 <th>RUT</th>
-                                                <th>Habitacion Asignada</th>
+                                                <th>Habitación Asignada</th>
                                                 <th>Acción</th>
                                             </tr>
                                         </thead>
                                         <tbody id="tableData">
                                             <tr>
+                                                <td>1</td>
                                                 <td>Jeremy</td>
                                                 <td>Cecchi</td>
                                                 <td>11.111.111-1</td>
-                                                <td>A11</td>
+                                                <td>1</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar">Editar</button>
                                                     <button type="button" class="eliminar">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>2</td>
                                                 <td>Fabián</td>
                                                 <td>Olcay</td>
                                                 <td>22.222.222-2</td>
-                                                <td>B12</td>
+                                                <td>2</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar">Editar</button>
                                                     <button type="button" class="eliminar">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>3</td>
                                                 <td>Dario</td>
                                                 <td>Cahuachia</td>
                                                 <td>33.333.333-3</td>
-                                                <td>C13</td>
+                                                <td>3</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar">Editar</button>
                                                     <button type="button" class="eliminar">Eliminar</button>
@@ -151,8 +155,76 @@
                     <div class="bedrooms-info option">
                         <h2 class="option-title">Lista de habitaciones</h2>
                         <div class="data">
-                            <div class="list-of-bedrooms">
-                                <h2>CRUD de habitaciones</h2>
+                            <div class="list-of-hosted">
+                                <div class="lista_botones">
+                                    <button class="crear">Crear Habitación</button>
+                                    <div class="inptbuscar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el ID de la Habitación"> 
+                                    </div>
+                                </div>
+                                <div class="table_border">
+                                    <table class="plantilla_huespedes" id="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Responsable</th>
+                                                <th>Fecha y hora</th>
+                                                <th>capacidad</th>
+                                                <th>Precio</th>
+                                                <th>Pasajeros</th>
+                                                <th>estado</th>
+                                                <th>Orientación</th>
+                                                <th>acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableData">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Responsable</td>
+                                                <td>03/12/24 15:21H</td>
+                                                <td>1</td>
+                                                <td>10000$</td>
+                                                <td>Jeremy, Fabian, Dario</td>
+                                                <td>ocupada</td>
+                                                <td></td>
+                                                <td class="buttons">
+                                                    <button type="button" class="actualizar">Editar</button>
+                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Responsable</td>
+                                                <td>03/12/24 15:21H</td>
+                                                <td>1</td>
+                                                <td>10000$</td>
+                                                <td>Jeremy, Fabian, Dario</td>
+                                                <td>ocupada</td>
+                                                <td></td>
+                                                <td class="buttons">
+                                                    <button type="button" class="actualizar">Editar</button>
+                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Resposable</td>
+                                                <td>03/12/24 15:21H</td>
+                                                <td>1</td>
+                                                <td>10000$</td>
+                                                <td>Jeremy, Fabian, Dario</td>
+                                                <td>ocupada</td>
+                                                <td></td>
+                                                <td class="buttons">
+                                                    <button type="button" class="actualizar">Editar</button>
+                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -356,6 +356,11 @@ th{
     text-align: left;
     
 }
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem; 
+}
 .actualizar, .eliminar{
     border: none;
     font-family: "Nunito", sans-serif;
