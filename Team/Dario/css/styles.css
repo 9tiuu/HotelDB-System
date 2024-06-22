@@ -601,3 +601,33 @@ th{
     transition: 0.3s;
     box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
 }
+
+
+.alert-eliminar{
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+.active { display: flex; }
+.alert-fondo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.527);
+    border-bottom: solid 0.5rem #fd4d4d;
+    height: 15rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
