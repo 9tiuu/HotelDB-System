@@ -29,3 +29,27 @@ userAccount.addEventListener('click', () => {
 profileButton.addEventListener('click', () => {
     userProfile.classList.remove('active');
 });
+
+
+// const editarAccount = document.getElementById('edit'+id);
+// const editarButton = document.getElementById('editarButton');
+// const editar = document.querySelector('.editar');
+
+// editarAccount.addEventListener('click', () => {
+//     editar.classList.add('active');
+// });
+
+// editarButton.addEventListener('click', () => {
+//     editar.classList.remove('active');
+// });
+const btnEdit=document.querySelectorAll('.actualizar');
+btnEdit.forEach(btn=>{
+    const editarButton = document.getElementById('editarButton');
+    const modal=document.querySelector('.edit');
+    btn.addEventListener('click', ()=>{
+        modal.classList.add('active');
+    });
+    editarButton.addEventListener('click', ()=>{
+        modal.classList.remove('active');
+    });
+});
