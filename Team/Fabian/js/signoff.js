@@ -42,7 +42,7 @@ profileButton.addEventListener('click', () => {
 // editarButton.addEventListener('click', () => {
 //     editar.classList.remove('active');
 // });
-const btnEdit=document.querySelectorAll('.actualizar');
+const btnEdit=document.querySelectorAll('.Huespedes');
 btnEdit.forEach(btn=>{
     const editarButton = document.getElementById('editarButton');
     const modal=document.querySelector('.edit');
