@@ -1,4 +1,4 @@
-/* MAIN COLORS */
+/* MAIN COLORS  -----------*/
 
 :root {
     --color1: #002E7B;
@@ -7,7 +7,7 @@
     --color4: #1CDAFF;
 }
 
-/* MAIN STYLES */
+/* MAIN STYLES ----------- */
 
 body {
     font-family: "Nunito", sans-serif;
@@ -119,7 +119,7 @@ body {
     width: 14%;
 }
 
-/* INFO STYLES */
+/* INFO STYLES ----------- */
 
 .home-info, .users-info {
     display: flex;
@@ -142,7 +142,7 @@ body {
 
 .active { display: flex; }
 
-/* CONTENT INFO */
+/* CONTENT INFO ----------- */
 
 .option-title {
     color: var(--color2);
@@ -195,7 +195,7 @@ body {
     flex-direction: column;
 }
 
-/* USERS AUDIT */
+/* USERS AUDIT | ADMINISTRADOR ----------- */
 
 .audit-data { padding: 0.5rem; }
 
@@ -261,13 +261,13 @@ body {
     color: #b1b1b1;
 }
 
-/* DATA TABLE STYLE */
+/* DATA TABLE STYLE ----------- */
 
 .lista_botones{
     display: flex;
     align-items: center;
     justify-content: left;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
     gap: 1rem;
 }
 .crear{
@@ -325,13 +325,13 @@ body {
 
 .table_border{
     padding: 1rem;
-    height: 23rem;
     max-width: 100%;
     border: solid 2px #e9e9fa;
     background-color: #ffffff;
     border-radius: 1rem;
-    height: 25rem;
+    height: 26.5rem;
 }
+
 .plantilla_huespedes{
     width: 100%;
     font-family: "Nunito", sans-serif;
@@ -359,8 +359,9 @@ th{
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem; 
+    gap: 0.2rem;
 }
+
 .actualizar, .eliminar{
     border: none;
     font-family: "Nunito", sans-serif;
@@ -391,7 +392,7 @@ th{
     transition: 0.3s;
 }
 
-/* ALERT NOTIFICATION */
+/* SIGNOFF | MODAL ----------- */
 
 .alert {
     display: none; /* none */
@@ -455,7 +456,7 @@ th{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .exitButton {
@@ -489,7 +490,7 @@ th{
     transition: 0.3s;
 }
 
-/* USER PROFILE | MODAL -----------*/
+/* USER PROFILE | MODAL ----------- */
 
 .user-profile {
     display: none; /* none */
@@ -506,7 +507,6 @@ th{
     position: fixed;
 }
 
-/* Activar ventana de perfil */
 .user-profile { display: none; }
 .active { display: flex; }
 
@@ -537,11 +537,6 @@ th{
     background: url(https://img.freepik.com/free-vector/paper-style-smooth-background_52683-64676.jpg);
     background-position: center;
 }
-
-/* .profile-info {
-    display: flex;
-    gap: 5rem;
-} */
 
 .profile-data {
     display: flex;
@@ -592,8 +587,6 @@ th{
     outline: none;
 }
 
-/* Botones ventana modal */
-
 .modal-buttons {
     display: flex;
     justify-content: center;
@@ -611,15 +604,6 @@ th{
     box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
 }
 
-.cancelButton {
-    background-color: #fd4d4d;
-}
-
-.cancelButton:hover {
-    background-color: #ae2828;
-    transition: 0.3s;
-    box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
-}
 
 /* HOSTED CREATE | MODAL ------------ */
 
@@ -651,10 +635,196 @@ th{
     animation-duration: 0.5s;
 }
 
-/* Activar ventana Crear pasajero */
 .create{ display: none; }
 .active { display: flex; }
 
+.crearButton {
+    background: #599f59;
+}
+
+.crearButton:hover {
+    background-color: #3d713d;
+    box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
+    transition: 0.3s;
+}
+
 /* HOSTED EDIT | MODAL ----------- */
 
+.edit {
+    display: none; /* none */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.edit-card {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    background: #ffffff;
+    height: 26rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+.edit { display: none; }
+.active { display: flex; }
+
 /* HOSTED DELETE | MODAL ----------- */
+
+.alert-eliminar {
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.eliminar-fondo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.527);
+    height: 15rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+.alert-eliminar { display: none; }
+.active { display: flex; }
+
+.pname-text {
+    color: var(--color2);
+}
+
+.cancelButton {
+    background-color: #5271FF;
+}
+
+.cancelButton:hover {
+    background-color: #374daf;
+    box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
+    transition: 0.3s;
+}
+
+/* BEDROOM CREATE | MODAL ----------- */
+/* BEDROOM EDIT | MODAL ----------- */
+/* BEDROOM DELETE | MODAL ----------- */
+
+/* USER CREATE | MODAL ----------- */
+
+.create-user {
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.create-user-card {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    background: #ffffff;
+    height: 26rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+.create-user { display: none; }
+.active { display: flex; }
+
+/* USER EDIT | MODAL ----------- */
+
+.edit-user {
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.edit-user-card {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    background: #ffffff;
+    height: 26rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+.edit-user { display: none; }
+.active { display: flex; }
+
+/* USER DELETE | MODAL ----------- */
+
+.delete-user {
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.delete-user-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.527);
+    height: 15rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+.delete-user { display: none; }
+.active { display: flex; }

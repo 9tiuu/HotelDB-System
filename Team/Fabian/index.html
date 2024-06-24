@@ -91,7 +91,7 @@
                         <div class="data">
                             <div class="list-of-hosted">
                                 <div class="lista_botones">
-                                    <button class="crear">Crear Pasajeros</button>
+                                    <button class="crear pasajero">Crear Pasajeros</button>
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -116,10 +116,10 @@
                                                 <td>Jeremy</td>
                                                 <td>Cecchi</td>
                                                 <td>11.111.111-1</td>
-                                                <td>1</td>
+                                                <td>01</td>
                                                 <td class="buttons">
-                                                    <button type="button" class="actualizar Huespedes">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                    <button type="button" class="actualizar h-update">Editar</button>
+                                                    <button type="button" class="eliminar h-delete">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -127,10 +127,10 @@
                                                 <td>Fabián</td>
                                                 <td>Olcay</td>
                                                 <td>22.222.222-2</td>
-                                                <td>2</td>
+                                                <td>02</td>
                                                 <td class="buttons">
-                                                    <button type="button" class="actualizar Huespedes">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                    <button type="button" class="actualizar h-update">Editar</button>
+                                                    <button type="button" class="eliminar h-delete">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -138,10 +138,10 @@
                                                 <td>Dario</td>
                                                 <td>Cahuachia</td>
                                                 <td>33.333.333-3</td>
-                                                <td>3</td>
+                                                <td>03</td>
                                                 <td class="buttons">
-                                                    <button type="button" class="actualizar Huespedes">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                    <button type="button" class="actualizar h-update">Editar</button>
+                                                    <button type="button" class="eliminar h-delete">Eliminar</button>
                                                 </td>
                                             </tr>
                                             
@@ -157,18 +157,18 @@
                         <div class="data">
                             <div class="list-of-hosted">
                                 <div class="lista_botones">
-                                    <button class="crear">Crear Habitación</button>
+                                    <button class="crear habitacion">Crear Habitación</button>
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el ID de la Habitación"> 
+                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el N° de la Habitación"> 
                                     </div>
                                 </div>
                                 <div class="table_border">
                                     <table class="plantilla_huespedes" id="table">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>N°</th>
                                                 <th>Responsable</th>
                                                 <th>Fecha y hora</th>
                                                 <th>capacidad</th>
@@ -181,42 +181,42 @@
                                         </thead>
                                         <tbody id="tableData">
                                             <tr>
-                                                <td>1</td>
-                                                <td>Responsable</td>
-                                                <td>03/12/24 15:21H</td>
-                                                <td>1</td>
-                                                <td>10000$</td>
-                                                <td>Jeremy, Fabian, Dario</td>
-                                                <td>ocupada</td>
-                                                <td></td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
+                                                <td>01</td>
+                                                <td>Jeremy</td>
+                                                <td>03/12/24 15:21 p.m.</td>
                                                 <td>2</td>
-                                                <td>Responsable</td>
-                                                <td>03/12/24 15:21H</td>
-                                                <td>1</td>
                                                 <td>10000$</td>
-                                                <td>Jeremy, Fabian, Dario</td>
-                                                <td>ocupada</td>
-                                                <td></td>
+                                                <td>Jeremy, Pasajero1</td>
+                                                <td>ocupada hasta el 04/12/24 15:21 p.m.</td>
+                                                <td>2 Camas y 1 Baño + Cocina y comedor</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar">Editar</button>
                                                     <button type="button" class="eliminar">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>3</td>
-                                                <td>Resposable</td>
-                                                <td>03/12/24 15:21H</td>
-                                                <td>1</td>
+                                                <td>02</td>
+                                                <td>Jeremy</td>
+                                                <td>03/12/24 15:21 p.m.</td>
+                                                <td>2</td>
                                                 <td>10000$</td>
-                                                <td>Jeremy, Fabian, Dario</td>
-                                                <td>ocupada</td>
-                                                <td></td>
+                                                <td>Fabian, Dario</td>
+                                                <td>ocupada hasta el 04/12/24 15:21 p.m.</td>
+                                                <td>2 Camas y 1 Baño + Cocina y comedor</td>
+                                                <td class="buttons">
+                                                    <button type="button" class="actualizar">Editar</button>
+                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>Por asignar</td>
+                                                <td>Por asignar</td>
+                                                <td>4</td>
+                                                <td>10000$</td>
+                                                <td>Por asignar</td>
+                                                <td>Por asignar</td>
+                                                <td>4 Camas y 2 Baños + Cocina y comedor</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar">Editar</button>
                                                     <button type="button" class="eliminar">Eliminar</button>
@@ -310,14 +310,53 @@
                         </div>
                     </div>
 
-                    <input type="submit" value="Listo" class="okButton returnButton" onclick="" id="rButton">
+                    <input type="submit" value="Ok" class="okButton returnButton" onclick="" id="rButton">
 
                 </div>
             </div>          
         </section>
+
+        <!-- Crear pasajero -->
+        <section class="create">
+            <div class="create-card">
+                <div class="profile-info">
+
+                    <h2 class="profile-title">Crear pasajero</h2>
+
+                    <div class="profile-data">
+                        <div class="user-profile-data">
+                            
+                            <div class="profile-username info-p-data">
+                                <b>Nombre</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="">
+                            </div>
+                            <div class="profile-type-user info-p-data">
+                                <b>Apellido</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="">
+                            </div>
+                            <div class="profile-user-email info-p-data">
+                                <b>Rut</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="">
+                            </div>
+                            <div class="profile-user-password info-p-data">
+                                <b>Habitación asignada</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <input type="submit" value="Cancelar" class="okButton cancelButton" onclick="" id="cancelButton">
+                        <input type="submit" value="Crear" class="okButton crearButton" onclick="" id="createButton">                       
+                    </div>
+
+                </div>
+            </div>          
+        </section>
+
         <!-- Editar pasajeros -->
         <section class="edit">
-            <div class="profile-card profile-edit">
+            <div class="edit-card">
                 <div class="profile-info">
 
                     <h2 class="profile-title">Editar Pasajero</h2>
@@ -327,25 +366,40 @@
                             
                             <div class="profile-username info-p-data">
                                 <b>Nombre</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="##########" disabled>
+                                <input type="text" name="" id="" class="inpt-profile" value="##########">
                             </div>
                             <div class="profile-type-user info-p-data">
                                 <b>Apellido</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="##########" disabled>
+                                <input type="text" name="" id="" class="inpt-profile" value="##########">
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>RUT</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="############" disabled>
+                                <input type="text" name="" id="" class="inpt-profile" value="###########">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Habitación Asignada</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="#" disabled>
+                                <input type="text" name="" id="" class="inpt-profile" value="##">
                             </div>
                         </div>
                     </div>
 
-                    <input type="submit" value="Listo" class="okButton returnButton" onclick="" id="editarButton">
+                    <input type="submit" value="Listo" class="okButton returnButton" onclick="" id="btnCancelEdit">
 
+                </div>
+            </div>          
+        </section>
+
+        <!-- Eliminar pasajero -->
+        <section class="alert-eliminar">
+            <div class="eliminar-fondo">
+                <div class="alert-info">
+                    <div class="alert-text">
+                        <h2>¿Eliminar pasajero: <b class="pname-text">Pasajero</b>?</h2>
+                        <div class="alert-button">                            
+                            <input type="submit" value="Cancelar" class="okButton cancelButton" id="aboton">
+                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton">
+                        </div>
+                    </div>
                 </div>
             </div>          
         </section>

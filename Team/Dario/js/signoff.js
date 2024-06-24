@@ -18,6 +18,8 @@ exitButton.addEventListener('click', () => {
     window.location = 'login.html';
 });
 
+// Perfil de usuario -------------------------
+
 const userAccount = document.getElementById('account');
 const profileButton = document.getElementById('rButton');
 const userProfile = document.querySelector('.user-profile');
@@ -30,21 +32,52 @@ profileButton.addEventListener('click', () => {
     userProfile.classList.remove('active');
 });
 
+// Crear Pasajeros -------------------------
 
-// parte de boton eliminar
+const btnCreate = document.querySelector('.pasajero');
+const btnCreateCancel = document.getElementById('cancelButton');
+const ModalCreate = document.querySelector('.create');
 
-const eliminarcosa = document.querySelectorAll(".eliminar");
-const alerTEmilinar = document.querySelector(".alert-eliminar");
+btnCreate.addEventListener('click', () => {
+    ModalCreate.classList.add('active');
+});
 
+btnCreateCancel.addEventListener('click', () => {
+    ModalCreate.classList.remove('active');
+});
+
+// Editar Pasajeros -------------------------
+
+const btnEdit = document.querySelectorAll('.h-update');
+const MotalEdit = document.querySelector('.edit');
+const btnEditCancel = document.getElementById('btnCancelEdit')
+
+btnEdit.forEach(btn => {
+    btn.addEventListener('click', () => {
+        MotalEdit.classList.add('active');
+    });
+});
+
+btnEditCancel.addEventListener('click', () => {
+    MotalEdit.classList.remove('active');
+});
+
+// Eliminar Pasajeros -------------------------
+
+const botonEliminar = document.querySelectorAll(".h-delete");
+const ModalDelete = document.querySelector(".alert-eliminar");
 const botonCancelar = document.getElementById("aboton");
-// const botonSi = document.getElementById("eboton");
 
-eliminarcosa.forEach(boton => {
+botonEliminar.forEach(boton => {
     boton.addEventListener('click', () => {
-        alerTEmilinar.classList.add('active');
+        ModalDelete.classList.add('active');
     });
 });
 
 botonCancelar.addEventListener('click', () => {
-    alerTEmilinar.classList.remove('active');
+    ModalDelete.classList.remove('active');
 });
+
+// Crear Habitacion -------------------------
+// Editar Habitacion -------------------------
+// Eliminar Habitacion-------------------------

@@ -48,3 +48,48 @@ auditButton.addEventListener('click', () => {
 configButton.addEventListener('click', () => {
     BtnSelected(configButton, configInfo, usersButton, auditButton, usersInfo, auditInfo);
 });
+
+// Crear Usuario -------------------------
+
+const btnCreateUser = document.querySelector('.cusuario');
+const ModalCreateUser = document.querySelector('.create-user');
+const btnCreateCancelUser = document.getElementById('cancelUserButton');
+
+btnCreateUser.addEventListener('click', () => {
+    ModalCreateUser.classList.add('active');
+});
+
+btnCreateCancelUser.addEventListener('click', () => {
+    ModalCreateUser.classList.remove('active');
+});
+
+// Editar Usuario -------------------------
+
+const btnUpdateUser = document.querySelector('.u-update');
+const ModalEditUser = document.querySelector('.edit-user');
+const btnCancelEditUSer = document.getElementById('btnCancelEditUser');
+
+btnUpdateUser.addEventListener('click', () => {
+    ModalEditUser.classList.add('active');
+});
+
+btnCancelEditUSer.addEventListener('click', () => {
+    ModalEditUser.classList.remove('active');
+});
+
+// Eliminar Usuario -------------------------
+
+const btnDeleteUser = document.querySelectorAll('.u-delete');
+const ModalDeleteUser = document.querySelector('.delete-user');
+const btnCancelDeleteUser = document.getElementById('aboton');
+
+btnDeleteUser.forEach(btn => {
+    btn.addEventListener('click', () => {
+        ModalDeleteUser.classList.add('active');
+    });
+});
+
+btnCancelDeleteUser.addEventListener('click', () => {
+    ModalDeleteUser.classList.remove('active');
+});
+

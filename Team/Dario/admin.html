@@ -69,7 +69,7 @@
                         <div class="data">
                             <div class="users-system">
                                 <div class="lista_botones">
-                                    <button class="crear">Crear usuario</button>
+                                    <button class="crear cusuario">Crear usuario</button>
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -97,8 +97,8 @@
                                                 <td>root.user@hoteldb.cl</td>
                                                 <td>**********</td>
                                                 <td class="buttons">
-                                                    <button type="button" class="actualizar">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                    <button type="button" class="actualizar u-update">Editar</button>
+                                                    <button type="button" class="eliminar u-delete">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -108,8 +108,8 @@
                                                 <td>admin.user@hoteldb.cl</td>
                                                 <td>**********</td>
                                                 <td class="buttons">
-                                                    <button type="button" class="actualizar">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                    <button type="button" class="actualizar u-update">Editar</button>
+                                                    <button type="button" class="eliminar u-delete">Eliminar</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -119,8 +119,8 @@
                                                 <td>pepito.skywalker@hoteldb.cl</td>
                                                 <td>**********</td>
                                                 <td class="buttons">
-                                                    <button type="button" class="actualizar">Editar</button>
-                                                    <button type="button" class="eliminar">Eliminar</button>
+                                                    <button type="button" class="actualizar u-update">Editar</button>
+                                                    <button type="button" class="eliminar u-delete">Eliminar</button>
                                                 </td>
                                             </tr>
                                             
@@ -239,7 +239,7 @@
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>Correo</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="user.user@hoteldb.cl" disabled>
+                                <input type="email" name="" id="" class="inpt-profile" value="user.user@hoteldb.cl" disabled>
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Contraseña</b>
@@ -248,8 +248,96 @@
                         </div>
                     </div>
 
-                    <input type="submit" value="Listo" class="okButton returnButton" onclick="" id="rButton">
+                    <input type="submit" value="Ok" class="okButton returnButton" onclick="" id="rButton">
 
+                </div>
+            </div>          
+        </section>
+
+        <!-- Crear usuario -->
+        <section class="create-user">
+            <div class="create-user-card">
+                <div class="profile-info">
+
+                    <h2 class="profile-title">Crear Usuario</h2>
+
+                    <div class="profile-data">
+                        <div class="user-profile-data">
+                            
+                            <div class="profile-username info-p-data">
+                                <b>Nombre de usuario</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="">
+                            </div>
+                            <div class="profile-type-user info-p-data">
+                                <b>Tipo de usuario</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="">
+                            </div>
+                            <div class="profile-user-email info-p-data">
+                                <b>Correo</b>
+                                <input type="email" name="" id="" class="inpt-profile" value="">
+                            </div>
+                            <div class="profile-user-password info-p-data">
+                                <b>Contraseña</b>
+                                <input type="password" name="" id="" class="inpt-profile" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <input type="submit" value="Cancelar" class="okButton cancelButton" onclick="" id="cancelUserButton">
+                        <input type="submit" value="Crear" class="okButton crearButton" onclick="" id="createButton">                       
+                    </div>
+
+                </div>
+            </div>          
+        </section>
+
+        <!-- Editar editar -->
+        <section class="edit-user">
+            <div class="edit-user-card">
+                <div class="profile-info">
+
+                    <h2 class="profile-title">Editar Usuario</h2>
+
+                    <div class="profile-data">
+                        <div class="user-profile-data">
+                            
+                            <div class="profile-username info-p-data">
+                                <b>Nombre de usuario</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="Username">
+                            </div>
+                            <div class="profile-type-user info-p-data">
+                                <b>Tipo de usuario</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="Administrador/Recepcionista">
+                            </div>
+                            <div class="profile-user-email info-p-data">
+                                <b>Correo</b>
+                                <input type="email" name="" id="" class="inpt-profile" value="user.user@hoteldb.cl">
+                            </div>
+                            <div class="profile-user-password info-p-data">
+                                <b>Contraseña</b>
+                                <input type="password" name="" id="" class="inpt-profile" value="1234567890">
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Listo" class="okButton returnButton" onclick="" id="btnCancelEditUser">
+
+                </div>
+            </div>          
+        </section>
+
+        <!-- Eliminar usuario -->
+        <section class="delete-user">
+            <div class="delete-user-card">
+                <div class="alert-info">
+                    <div class="alert-text">
+                        <h2>¿Eliminar el usuario: <b class="pname-text">Usuario</b>?</h2>
+                        <div class="alert-button">                            
+                            <input type="submit" value="Cancelar" class="okButton cancelButton" id="aboton">
+                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton">
+                        </div>
+                    </div>
                 </div>
             </div>          
         </section>
