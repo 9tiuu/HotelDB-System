@@ -29,3 +29,22 @@ userAccount.addEventListener('click', () => {
 profileButton.addEventListener('click', () => {
     userProfile.classList.remove('active');
 });
+
+
+// parte de boton eliminar
+
+const eliminarcosa = document.querySelectorAll(".eliminar");
+const alerTEmilinar = document.querySelector(".alert-eliminar");
+
+const botonCancelar = document.getElementById("aboton");
+// const botonSi = document.getElementById("eboton");
+
+eliminarcosa.forEach(boton => {
+    boton.addEventListener('click', () => {
+        alerTEmilinar.classList.add('active');
+    });
+});
+
+botonCancelar.addEventListener('click', () => {
+    alerTEmilinar.classList.remove('active');
+});
