@@ -489,7 +489,7 @@ th{
     transition: 0.3s;
 }
 
-/* USER PROFILE */
+/* USER PROFILE | MODAL -----------*/
 
 .user-profile {
     display: none; /* none */
@@ -592,6 +592,15 @@ th{
     outline: none;
 }
 
+/* Botones ventana modal */
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .returnButton {
     background-color: #5271FF;
 }
@@ -601,3 +610,51 @@ th{
     transition: 0.3s;
     box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
 }
+
+.cancelButton {
+    background-color: #fd4d4d;
+}
+
+.cancelButton:hover {
+    background-color: #ae2828;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
+}
+
+/* HOSTED CREATE | MODAL ------------ */
+
+.create {
+    display: none; /* none */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    
+    background-color: #000000ab;
+    backdrop-filter: blur(2px);
+    position: fixed;
+}
+
+.create-card {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    background: #ffffff;
+    height: 26rem;
+    width: 30rem;
+    border-radius: 1rem;
+
+    animation-name: alert-animation;
+    animation-duration: 0.5s;
+}
+
+/* Activar ventana Crear pasajero */
+.create{ display: none; }
+.active { display: flex; }
+
+/* HOSTED EDIT | MODAL ----------- */
+
+/* HOSTED DELETE | MODAL ----------- */

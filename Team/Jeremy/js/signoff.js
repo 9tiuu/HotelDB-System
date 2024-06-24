@@ -18,6 +18,8 @@ exitButton.addEventListener('click', () => {
     window.location = 'login.html';
 });
 
+// Perfil de usuario -------------------------
+
 const userAccount = document.getElementById('account');
 const profileButton = document.getElementById('rButton');
 const userProfile = document.querySelector('.user-profile');
@@ -29,3 +31,21 @@ userAccount.addEventListener('click', () => {
 profileButton.addEventListener('click', () => {
     userProfile.classList.remove('active');
 });
+
+// Crear Pasajeros -------------------------
+
+const btnCreate = document.querySelector('.pasajero');
+const btnModalCancel = document.getElementById('cancelButton');
+const ModalCreate = document.querySelector('.create');
+
+btnCreate.addEventListener('click', () => {
+    ModalCreate.classList.add('active');
+});
+
+btnModalCancel.addEventListener('click', () => {
+    ModalCreate.classList.remove('active');
+});
+
+// Editar Pasajeros -------------------------
+
+// Eliminar Pasajeros -------------------------

@@ -91,7 +91,7 @@
                         <div class="data">
                             <div class="list-of-hosted">
                                 <div class="lista_botones">
-                                    <button class="crear">Crear Pasajeros</button>
+                                    <button class="crear pasajero">Crear Pasajeros</button>
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -157,18 +157,18 @@
                         <div class="data">
                             <div class="list-of-hosted">
                                 <div class="lista_botones">
-                                    <button class="crear">Crear Habitación</button>
+                                    <button class="crear habitacion">Crear Habitación</button>
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el ID de la Habitación"> 
+                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el N° de la Habitación"> 
                                     </div>
                                 </div>
                                 <div class="table_border">
                                     <table class="plantilla_huespedes" id="table">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>N°</th>
                                                 <th>Responsable</th>
                                                 <th>Fecha y hora</th>
                                                 <th>capacidad</th>
@@ -311,6 +311,44 @@
                     </div>
 
                     <input type="submit" value="Listo" class="okButton returnButton" onclick="" id="rButton">
+
+                </div>
+            </div>          
+        </section>
+
+        <!-- Crear pasajero -->
+        <section class="create">
+            <div class="create-card">
+                <div class="profile-info">
+
+                    <h2 class="profile-title">Crear pasajero</h2>
+
+                    <div class="profile-data">
+                        <div class="user-profile-data">
+                            
+                            <div class="profile-username info-p-data">
+                                <b>Nombre</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="########" disabled>
+                            </div>
+                            <div class="profile-type-user info-p-data">
+                                <b>Apellido</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="########" disabled>
+                            </div>
+                            <div class="profile-user-email info-p-data">
+                                <b>Rut</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="########" disabled>
+                            </div>
+                            <div class="profile-user-password info-p-data">
+                                <b>Habitación asignada</b>
+                                <input type="text" name="" id="" class="inpt-profile" value="########" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <input type="submit" value="Crear" class="okButton returnButton" onclick="" id="createButton">
+                        <input type="submit" value="Cancelar" class="okButton cancelButton" onclick="" id="cancelButton">
+                    </div>
 
                 </div>
             </div>          
