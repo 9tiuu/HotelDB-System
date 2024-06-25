@@ -79,5 +79,47 @@ botonCancelar.addEventListener('click', () => {
 });
 
 // Crear Habitacion -------------------------
+
+const btnCreateBedroom = document.querySelector('.habitacion');
+const btnCancelCreateBedroom = document.querySelector('.b-btnCancel');
+const ModalCreateBedroom = document.querySelector('.create-bedroom')
+
+btnCreateBedroom.addEventListener('click', () => {
+    ModalCreateBedroom.classList.add('active');
+});
+
+btnCancelCreateBedroom.addEventListener('click', () => {
+    ModalCreateBedroom.classList.remove('active');
+});
+
 // Editar Habitacion -------------------------
-// Eliminar Habitacion-------------------------
+
+const btnEditBedroom = document.querySelectorAll('.b-update');
+const ModalEditBedroom = document.querySelector('.edit-bedroom');
+const btnOkBedroom = document.querySelector('.b-btnECancel');
+
+btnEditBedroom.forEach(btn => {
+    btn.addEventListener('click', () => {
+        ModalEditBedroom.classList.add('active');
+    });
+});
+
+btnOkBedroom.addEventListener('click', () => {
+    ModalEditBedroom.classList.remove('active');
+});
+
+// Eliminar Habitacion -------------------------
+
+const btnDelBedroom = document.querySelectorAll('.b-delete');
+const ModalDelBedroom = document.querySelector('.delete-bedroom');
+const btnCacelDelBedroom = document.querySelector('.btnCancelEditBedroom');
+
+btnDelBedroom.forEach(btn => {
+    btn.addEventListener('click', () => {
+        ModalDelBedroom.classList.add('active');
+    });
+});
+
+btnCacelDelBedroom.addEventListener('click', () => {
+    ModalDelBedroom.classList.remove('active');
+});
