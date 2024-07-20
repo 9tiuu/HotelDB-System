@@ -365,7 +365,7 @@ th{
 .actualizar, .eliminar{
     border: none;
     font-family: "Nunito", sans-serif;
-    color: #dee4ff;
+    color: #ffffff;
     font-weight: bold;
     border-radius: .2rem;
     cursor: pointer;
@@ -646,6 +646,17 @@ th{
     background-color: #3d713d;
     box-shadow: 0 5px 10px 0 rgb(185, 181, 255);
     transition: 0.3s;
+}
+
+.error {
+    border-color: #ff1c1c;
+    /* background-color: hsl(0, 100%, 98%); */
+    color: #ff1c1c;
+}
+
+.warning {
+    border-color: #d5e100;
+    background-color: #fdffe0;
 }
 
 /* HOSTED EDIT | MODAL ----------- */

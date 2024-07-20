@@ -115,7 +115,7 @@
                                                 <td>1</td>
                                                 <td>Jeremy</td>
                                                 <td>Cecchi</td>
-                                                <td>11.111.111-1</td>
+                                                <td>11111111-1</td>
                                                 <td>01</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar h-update">Editar</button>
@@ -126,7 +126,7 @@
                                                 <td>2</td>
                                                 <td>Fabián</td>
                                                 <td>Olcay</td>
-                                                <td>22.222.222-2</td>
+                                                <td>22222222-2</td>
                                                 <td>02</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar h-update">Editar</button>
@@ -137,7 +137,7 @@
                                                 <td>3</td>
                                                 <td>Dario</td>
                                                 <td>Cahuachia</td>
-                                                <td>33.333.333-3</td>
+                                                <td>33333333-3</td>
                                                 <td>03</td>
                                                 <td class="buttons">
                                                     <button type="button" class="actualizar h-update">Editar</button>
@@ -328,26 +328,26 @@
                             
                             <div class="profile-username info-p-data">
                                 <b>Nombre</b>
-                                <input type="text" class="inpt-profile" value="">
+                                <input type="text" class="inpt-profile" value="" id="name-hosted">
                             </div>
                             <div class="profile-type-user info-p-data">
                                 <b>Apellido</b>
-                                <input type="text" class="inpt-profile" value="">
+                                <input type="text" class="inpt-profile" value="" id="lastname-hosted">
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>Rut</b>
-                                <input type="text" class="inpt-profile" value="">
+                                <input type="text" class="inpt-profile" value="" id="rut-hosted" maxlength="10">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Habitación asignada</b>
-                                <input type="text" class="inpt-profile" value="">
+                                <input type="text" class="inpt-profile" value="" id="bedroom-asigned-hosted" maxlength="2">
                             </div>
                         </div>
                     </div>
 
                     <div class="modal-buttons">
                         <input type="submit" value="Cancelar" class="okButton cancelButton" onclick="" id="cancelButton">
-                        <input type="submit" value="Crear" class="okButton crearButton" onclick="" id="createButton">                       
+                        <input type="submit" value="Crear" class="okButton crearButton" onclick="AddHosted()" id="createButton">                       
                     </div>
 
                 </div>
@@ -374,7 +374,7 @@
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>RUT</b>
-                                <input type="text" class="inpt-profile" value="###########">
+                                <input type="text" class="inpt-profile" value="###########" maxlength="10">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Habitación Asignada</b>
@@ -539,5 +539,6 @@
     </main>
     <script src="js/main.js"></script>
     <script src="js/signoff.js"></script>
+    <script src="js/CRUD/hosted.js"></script>
 </body>
 </html>
