@@ -110,41 +110,8 @@
                                                 <th>Acción</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tableData">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Jeremy</td>
-                                                <td>Cecchi</td>
-                                                <td>11111111-1</td>
-                                                <td>01</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar h-update">Editar</button>
-                                                    <button type="button" class="eliminar h-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Fabián</td>
-                                                <td>Olcay</td>
-                                                <td>22222222-2</td>
-                                                <td>02</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar h-update">Editar</button>
-                                                    <button type="button" class="eliminar h-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Dario</td>
-                                                <td>Cahuachia</td>
-                                                <td>33333333-3</td>
-                                                <td>03</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar h-update">Editar</button>
-                                                    <button type="button" class="eliminar h-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            
+                                        <tbody id="tableData" class="hosted-tbody">                                          
+                                            <!-- Lista de Huespedes -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -328,25 +295,25 @@
                             
                             <div class="profile-username info-p-data">
                                 <b>Nombre</b>
-                                <input type="text" class="inpt-profile" value="" id="name-hosted">
+                                <input type="text" class="inpt-profile addP" value="" id="name-hosted">
                             </div>
                             <div class="profile-type-user info-p-data">
                                 <b>Apellido</b>
-                                <input type="text" class="inpt-profile" value="" id="lastname-hosted">
+                                <input type="text" class="inpt-profile addP" value="" id="lastname-hosted">
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>Rut</b>
-                                <input type="text" class="inpt-profile" value="" id="rut-hosted" maxlength="10">
+                                <input type="text" class="inpt-profile addP" value="" id="rut-hosted" maxlength="10">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Habitación asignada</b>
-                                <input type="text" class="inpt-profile" value="" id="bedroom-asigned-hosted" maxlength="2">
+                                <input type="text" class="inpt-profile addP" value="" id="bedroom-asigned-hosted" maxlength="2">
                             </div>
                         </div>
                     </div>
 
                     <div class="modal-buttons">
-                        <input type="submit" value="Cancelar" class="okButton cancelButton" onclick="" id="cancelButton">
+                        <input type="submit" value="Cancelar" class="okButton cancelButton" id="cancelAddhostedButton">
                         <input type="submit" value="Crear" class="okButton crearButton" onclick="AddHosted()" id="createButton">                       
                     </div>
 
@@ -394,10 +361,10 @@
             <div class="eliminar-fondo">
                 <div class="alert-info">
                     <div class="alert-text">
-                        <h2>¿Eliminar pasajero: <b class="pname-text">Pasajero</b>?</h2>
+                        <h2>¿Eliminar pasajero: <b class="pname-text delselectedhosted">Pasajero</b>?</h2>
                         <div class="alert-button">                            
-                            <input type="submit" value="Cancelar" class="okButton cancelButton" id="aboton">
-                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton">
+                            <input type="submit" value="Cancelar" class="okButton cancelButton" id="aboton-hosted">
+                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton-hosted">
                         </div>
                     </div>
                 </div>

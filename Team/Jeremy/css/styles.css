@@ -587,6 +587,10 @@ th{
     outline: none;
 }
 
+.inpt-profile::placeholder {
+    color: #ff1c1c;
+}
+
 .modal-buttons {
     display: flex;
     justify-content: center;
@@ -651,7 +655,6 @@ th{
 .error {
     border-color: #ff1c1c;
     /* background-color: hsl(0, 100%, 98%); */
-    color: #ff1c1c;
 }
 
 .warning {
