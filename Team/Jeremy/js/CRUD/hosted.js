@@ -1,30 +1,29 @@
-const tbody = document.getElementById('tableData');
-tbody.innerHTML = '';
+const tbody = document.querySelector('.hosted-tbody');
 
 const Valitation = (id) => {
     const inpt = document.getElementById(id + '-hosted');
 
     if (inpt.value.trim() === '') {
         inpt.classList.add('error');
-        inpt.value = 'Campo vacío';
+        inpt.setAttribute('placeholder', 'Campo vacío');
 
         setTimeout(() => {
             inpt.classList.remove('error');
-            inpt.value = '';
-        }, 3000);
+            inpt.setAttribute('placeholder', '');
+        }, 2000);
 
     } else { return inpt.value };
 };
 
 const CleanInpts = () => {
-    const intps = document.querySelectorAll('.inpt-profile');
+    const intps = document.querySelectorAll('.addP');
     
     intps.forEach(inpt => {
         inpt.value = '';
     });
 };
 
-const HOSTEDS = [];
+const HOSTEDS = ['HostedList'];
 let hostedID = 1;
 
 // Agregar pasajeros ---------------------------
@@ -47,10 +46,8 @@ const AddHosted = () => {
     if (hostedName && hostedLastname && hostedRut && hostedBedroom) {
 
         const findRut = HOSTEDS.find(h => h.rut === hostedRut);
-        const findName = HOSTEDS.find(h => h.name === hostedName);
 
-
-        if (!findRut && !findName) {
+        if (!findRut) {
             HOSTEDS.push(hosted);
             console.log(HOSTEDS);
 
@@ -63,12 +60,47 @@ const AddHosted = () => {
     };
 };
 
+// Editar Pasajeros ---------------------------
+
+const EditHostedEvent = (id) => {
+    const MotalEdit = document.querySelector('.edit');
+    const btnEditCancel = document.getElementById('btnCancelEdit')
+
+    MotalEdit.classList.add('active');
+
+    btnEditCancel.addEventListener('click', () => {
+        MotalEdit.classList.remove('active');
+    });
+
+    HOSTEDS.forEach(h => {
+        if (h.id === id) {
+            console.log(h.id, h.name, h.rut);
+        };
+    });
+};
+
 // Eliminar pasajeros ---------------------------
 
-const DeleteHosted = (id) => {
-    const tr = document.getElementById('hosted_' + id);
-    console.log(tr);
-    tbody.removeChild(tr);
+const DeleteHostedEvent = (id) => {
+    const ModalDelete = document.querySelector(".alert-eliminar");
+    const botonCancelar = document.getElementById("aboton-hosted");
+    const btnEliminar = document.getElementById('eboton-hosted');
+    const hosted = document.querySelector('.delselectedhosted');
+
+    ModalDelete.classList.add('active');
+    hosted.innerHTML = id; // test
+
+    botonCancelar.addEventListener('click', () => {
+        ModalDelete.classList.remove('active');
+    });
+
+    btnEliminar.addEventListener('click', () => {
+        const tr = document.getElementById('hosted_' + id);
+        ModalDelete.classList.remove('active');    
+           
+        tbody.removeChild(tr);
+        console.log(HOSTEDS);
+    });
 };
 
 const DataTable = () => {
@@ -83,8 +115,8 @@ const DataTable = () => {
             <td>${h.rut}</td>
             <td>${h.bedroom}</td>
             <td class="buttons">
-                <button type="button" class="actualizar h-update">Editar</button>
-                <button type="button" class="eliminar h-delete">Eliminar</button>
+                <button type="button" onclick="EditHostedEvent(${h.id})" class="actualizar h-update">Editar</button>
+                <button type="button" onclick="DeleteHostedEvent(${h.id})" class="eliminar h-delete">Eliminar</button>
             </td>
         `;
 
