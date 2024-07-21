@@ -179,7 +179,7 @@
                                                 <th>acción</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tableData">
+                                        <tbody class="CrearH" id="tableData">
                                             <tr>
                                                 <td>01</td>
                                                 <td>Jeremy</td>
@@ -417,37 +417,37 @@
                             <div class="b-data1">
                                 <div class="info-p-data">
                                     <b>N° Habitación</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="number" class="inpt-profile inptH" value="" id="numeroHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Responsable</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="responsableHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Fecha y hora</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="fechaHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Capacidad</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="number" class="inpt-profile inptH" value="" id="capacidadHelp">
                                 </div>
                             </div>
                             <div class="b-data2">
                                 <div class="info-p-data">
                                     <b>Precio</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="number" class="inpt-profile inptH" value="" id="precioHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Pasajeros</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="pasajerosHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Estado</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="estadoHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Orientación</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="orientacionHelp">
                                 </div>
                             </div>
                             
@@ -456,7 +456,7 @@
 
                     <div class="modal-buttons">
                         <input type="submit" value="Cancelar" class="okButton cancelButton b-btnCancel" onclick="" id="cancelButton">
-                        <input type="submit" value="Crear" class="okButton crearButton" onclick="" id="createButton">                       
+                        <input type="submit" value="Crear" class="okButton crearButton" onclick='Addbedroom()' id="createButton">                       
                     </div>
 
                 </div>
@@ -514,7 +514,7 @@
                     </div>
 
                     <div class="modal-buttons">
-                        <input type="submit" value="Listo" class="okButton cancelButton b-btnECancel" onclick="" id="cancelButton">                      
+                        <input type="submit" value="Listo" class="okButton cancelButton b-btnECancel" onclick="" id="cancelButton">                     
                     </div>
 
                 </div>
@@ -526,10 +526,10 @@
             <div class="delete-bedroom-card">
                 <div class="alert-info">
                     <div class="alert-text">
-                        <h2>¿Eliminar habitación: <b class="pname-text">N°</b>?</h2>
+                        <h2>¿Eliminar habitación: <b class="pname-text habitE">N°</b>?</h2>
                         <div class="alert-button">                            
-                            <input type="submit" value="Cancelar" class="okButton cancelButton btnCancelEditBedroom" id="aboton">
-                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton">
+                            <input type="submit" value="Cancelar" class="okButton cancelButton btnCancelEditBedroom" id="aboton-bedroom">
+                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton-bedroom">
                         </div>
                     </div>
                 </div>
@@ -539,5 +539,6 @@
     </main>
     <script src="js/main.js"></script>
     <script src="js/signoff.js"></script>
+    <script src="js/CRUD/habitacion.js"></script>
 </body>
 </html>

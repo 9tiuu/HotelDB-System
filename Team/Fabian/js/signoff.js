@@ -82,7 +82,7 @@ botonCancelar.addEventListener('click', () => {
 
 const btnCreateBedroom = document.querySelector('.habitacion');
 const btnCancelCreateBedroom = document.querySelector('.b-btnCancel');
-const ModalCreateBedroom = document.querySelector('.create-bedroom')
+const ModalCreateBedroom = document.querySelector('.create-bedroom');
 
 btnCreateBedroom.addEventListener('click', () => {
     ModalCreateBedroom.classList.add('active');
