@@ -94,9 +94,6 @@ const EditHostedEvent = (id) => {
             lastname.value = h.lastname;
             rut.value = h.rut;
             bedroom.value = h.bedroom;
-
-            const asd = USERS.find(u => u.id === id);
-            console.log(asd);
         };
     });
 };
