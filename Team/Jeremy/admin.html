@@ -89,41 +89,8 @@
                                                 <th>Acción</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tableData">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>root</td>
-                                                <td>Administrador</td>
-                                                <td>root.user@hoteldb.cl</td>
-                                                <td>**********</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar u-update">Editar</button>
-                                                    <button type="button" class="eliminar u-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Administrador</td>
-                                                <td>Administrador</td>
-                                                <td>admin.user@hoteldb.cl</td>
-                                                <td>**********</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar u-update">Editar</button>
-                                                    <button type="button" class="eliminar u-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Pepito</td>
-                                                <td>Recepcionista</td>
-                                                <td>pepito.skywalker@hoteldb.cl</td>
-                                                <td>**********</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar u-update">Editar</button>
-                                                    <button type="button" class="eliminar u-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            
+                                        <tbody id="tableData" class="user-tbody">
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -266,33 +233,33 @@
                             
                             <div class="profile-username info-p-data">
                                 <b>Nombre de usuario</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="">
+                                <input type="text" name="" class="inpt-profile addU" value="" id="username-user">
                             </div>
                             <div class="profile-type-user info-p-data">
                                 <b>Tipo de usuario</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="">
+                                <input type="text" name="" class="inpt-profile addU" value="" id="rol-user">
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>Correo</b>
-                                <input type="email" name="" id="" class="inpt-profile" value="">
+                                <input type="email" name="" class="inpt-profile addU" value="" id="email-user">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Contraseña</b>
-                                <input type="password" name="" id="" class="inpt-profile" value="">
+                                <input type="password" name="" class="inpt-profile addU" value="" id="password-user">
                             </div>
                         </div>
                     </div>
 
                     <div class="modal-buttons">
                         <input type="submit" value="Cancelar" class="okButton cancelButton" onclick="" id="cancelUserButton">
-                        <input type="submit" value="Crear" class="okButton crearButton" onclick="" id="createButton">                       
+                        <input type="submit" value="Crear" class="okButton crearButton" onclick="AddUser()" id="createButton">                       
                     </div>
 
                 </div>
             </div>          
         </section>
 
-        <!-- Editar editar -->
+        <!-- Editar usuario -->
         <section class="edit-user">
             <div class="edit-user-card">
                 <div class="profile-info">
@@ -304,19 +271,19 @@
                             
                             <div class="profile-username info-p-data">
                                 <b>Nombre de usuario</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="Username">
+                                <input type="text" name="" id="username-edit" class="inpt-profile">
                             </div>
                             <div class="profile-type-user info-p-data">
                                 <b>Tipo de usuario</b>
-                                <input type="text" name="" id="" class="inpt-profile" value="Administrador/Recepcionista">
+                                <input type="text" name="" id="typeuser-edit" class="inpt-profile">
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>Correo</b>
-                                <input type="email" name="" id="" class="inpt-profile" value="user.user@hoteldb.cl">
+                                <input type="email" name="" id="email-edit" class="inpt-profile">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Contraseña</b>
-                                <input type="password" name="" id="" class="inpt-profile" value="1234567890">
+                                <input type="text" name="" id="password-edit" class="inpt-profile">
                             </div>
                         </div>
                     </div>
@@ -332,10 +299,10 @@
             <div class="delete-user-card">
                 <div class="alert-info">
                     <div class="alert-text">
-                        <h2>¿Eliminar el usuario: <b class="pname-text">Usuario</b>?</h2>
+                        <h2>¿Eliminar el usuario: <b class="pname-text delUser">Usuario</b>?</h2>
                         <div class="alert-button">                            
-                            <input type="submit" value="Cancelar" class="okButton cancelButton" id="aboton">
-                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton">
+                            <input type="submit" value="Cancelar" class="okButton cancelButton" id="aboton-user">
+                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton-user">
                         </div>
                     </div>
                 </div>
@@ -345,6 +312,6 @@
     </main>
     <script src="js/admin.js"></script>
     <script src="js/signoff.js"></script>
-
+    <script src="js/CRUD/users.js"></script>
 </body>
 </html>

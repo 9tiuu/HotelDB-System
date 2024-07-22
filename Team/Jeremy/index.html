@@ -102,7 +102,7 @@
                                     <table class="plantilla_huespedes" id="table">
                                         <thead>
                                             <tr>
-                                                <td>ID</td>
+                                                <th>ID</th>
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                 <th>RUT</th>
@@ -128,7 +128,7 @@
                                     <div class="inptbuscar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el N° de la Habitación"> 
+                                        </svg> <input type="text" class="buscar" placeholder="Ingrese el N° de la Habitación" id="inpBusqueda"> 
                                     </div>
                                 </div>
                                 <div class="table_border">
@@ -146,8 +146,8 @@
                                                 <th>acción</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tableData">
-                                            <tr>
+                                        <tbody id="tableData" class="CrearH">
+                                            <!-- <tr>
                                                 <td>01</td>
                                                 <td>Jeremy</td>
                                                 <td>03/12/24 15:21 p.m.</td>
@@ -160,35 +160,7 @@
                                                     <button type="button" class="actualizar b-update">Editar</button>
                                                     <button type="button" class="eliminar b-delete">Eliminar</button>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td>02</td>
-                                                <td>Jeremy</td>
-                                                <td>03/12/24 15:21 p.m.</td>
-                                                <td>2</td>
-                                                <td>10000$</td>
-                                                <td>Fabian, Dario</td>
-                                                <td>ocupada hasta el 04/12/24 15:21 p.m.</td>
-                                                <td>2 Camas y 1 Baño + Cocina y comedor</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar b-update">Editar</button>
-                                                    <button type="button" class="eliminar b-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>03</td>
-                                                <td>Por asignar</td>
-                                                <td>Por asignar</td>
-                                                <td>4</td>
-                                                <td>10000$</td>
-                                                <td>Por asignar</td>
-                                                <td>Por asignar</td>
-                                                <td>4 Camas y 2 Baños + Cocina y comedor</td>
-                                                <td class="buttons">
-                                                    <button type="button" class="actualizar b-update">Editar</button>
-                                                    <button type="button" class="eliminar b-delete">Eliminar</button>
-                                                </td>
-                                            </tr>
+                                            </tr> -->                                           
                                         </tbody>
                                     </table>
                                 </div>
@@ -219,8 +191,8 @@
                             <img src="img/user-account/user-icon.png" alt="" style="width: 35px; height: 35px;">
                         </div>
                         <div class="user-info-section">
-                            <h2 class="user-name">Username</h2>
-                            <p class="user-rol">Encargado de Hotel</p>
+                            <h2 class="user-name">Pepito</h2>
+                            <p class="user-rol">Recepcionista</p>
                         </div>
                     </button>
 
@@ -284,7 +256,7 @@
         </section>
 
         <!-- Crear pasajero -->
-        <section class="create">
+        <section class="create create-hosted">
             <div class="create-card">
                 <div class="profile-info">
 
@@ -302,7 +274,7 @@
                                 <input type="text" class="inpt-profile addP" value="" id="lastname-hosted">
                             </div>
                             <div class="profile-user-email info-p-data">
-                                <b>Rut</b>
+                                <b class="HostedRutTitle">Rut</b>
                                 <input type="text" class="inpt-profile addP" value="" id="rut-hosted" maxlength="10">
                             </div>
                             <div class="profile-user-password info-p-data">
@@ -322,7 +294,7 @@
         </section>
 
         <!-- Editar pasajeros -->
-        <section class="edit">
+        <section class="edit edit-hosted">
             <div class="edit-card">
                 <div class="profile-info">
 
@@ -333,19 +305,19 @@
                             
                             <div class="profile-username info-p-data">
                                 <b>Nombre</b>
-                                <input type="text" class="inpt-profile" value="##########">
+                                <input type="text" class="inpt-profile" id="edit-namep">
                             </div>
                             <div class="profile-type-user info-p-data">
                                 <b>Apellido</b>
-                                <input type="text" class="inpt-profile" value="##########">
+                                <input type="text" class="inpt-profile" id="edit-lastname">
                             </div>
                             <div class="profile-user-email info-p-data">
                                 <b>RUT</b>
-                                <input type="text" class="inpt-profile" value="###########" maxlength="10">
+                                <input type="text" class="inpt-profile" id="edit-rut" maxlength="10">
                             </div>
                             <div class="profile-user-password info-p-data">
                                 <b>Habitación Asignada</b>
-                                <input type="text" class="inpt-profile" value="##">
+                                <input type="text" class="inpt-profile" id="edit-bedroom" maxlength="2">
                             </div>
                         </div>
                     </div>
@@ -357,7 +329,7 @@
         </section>
 
         <!-- Eliminar pasajero -->
-        <section class="alert-eliminar">
+        <section class="alert-eliminar delete-hosted">
             <div class="eliminar-fondo">
                 <div class="alert-info">
                     <div class="alert-text">
@@ -383,38 +355,38 @@
                             
                             <div class="b-data1">
                                 <div class="info-p-data">
-                                    <b>N° Habitación</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <b class="bedroomNumberTitle">N° Habitación</b>
+                                    <input type="number" class="inpt-profile inptH" value="" id="numeroHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Responsable</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile" value="Definir al crear" id="responsableHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Fecha y hora</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile" value="Definir al crear" id="fechaHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Capacidad</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="number" class="inpt-profile inptH" value="" id="capacidadHelp">
                                 </div>
                             </div>
                             <div class="b-data2">
                                 <div class="info-p-data">
                                     <b>Precio</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="number" class="inpt-profile inptH" value="" id="precioHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Pasajeros</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile" value="Definir al crear" id="pasajerosHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Estado</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="estadoHelp">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Orientación</b>
-                                    <input type="text" class="inpt-profile" value="">
+                                    <input type="text" class="inpt-profile inptH" value="" id="orientacionHelp">
                                 </div>
                             </div>
                             
@@ -423,7 +395,7 @@
 
                     <div class="modal-buttons">
                         <input type="submit" value="Cancelar" class="okButton cancelButton b-btnCancel" onclick="" id="cancelButton">
-                        <input type="submit" value="Crear" class="okButton crearButton" onclick="" id="createButton">                       
+                        <input type="submit" value="Crear" class="okButton crearButton" onclick="AddBedroom()" id="createButton">                       
                     </div>
 
                 </div>
@@ -443,37 +415,37 @@
                             <div class="b-data1">
                                 <div class="info-p-data">
                                     <b>N° Habitación</b>
-                                    <input type="text" class="inpt-profile" value="N°">
+                                    <input type="number" class="inpt-profile" value="N°" id="edit-num">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Responsable</b>
-                                    <input type="text" class="inpt-profile" value="Responsable">
+                                    <input type="text" class="inpt-profile" value="Responsable" id="edit-responsable">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Fecha y hora</b>
-                                    <input type="text" class="inpt-profile" value="Fecha y hora">
+                                    <input type="text" class="inpt-profile" value="Fecha y hora" id="edit-fecha">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Capacidad</b>
-                                    <input type="text" class="inpt-profile" value="Capacidad">
+                                    <input type="number" class="inpt-profile" value="Capacidad" id="edit-capacidad">
                                 </div>
                             </div>
                             <div class="b-data2">
                                 <div class="info-p-data">
                                     <b>Precio</b>
-                                    <input type="text" class="inpt-profile" value="Precio">
+                                    <input type="number" class="inpt-profile" value="Precio" id="edit-precio">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Pasajeros</b>
-                                    <input type="text" class="inpt-profile" value="Pasajeros">
+                                    <input type="text" class="inpt-profile" value="Pasajeros" id="edit-pasajeros">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Estado</b>
-                                    <input type="text" class="inpt-profile" value="Estado">
+                                    <input type="text" class="inpt-profile" value="Estado" id="edit-estado">
                                 </div>
                                 <div class="info-p-data">
                                     <b>Orientación</b>
-                                    <input type="text" class="inpt-profile" value="Orientación">
+                                    <input type="text" class="inpt-profile" value="Orientación" id="edit-orientacion">
                                 </div>
                             </div>
                             
@@ -493,10 +465,10 @@
             <div class="delete-bedroom-card">
                 <div class="alert-info">
                     <div class="alert-text">
-                        <h2>¿Eliminar habitación: <b class="pname-text">N°</b>?</h2>
+                        <h2>¿Eliminar habitación: <b class="pname-text habitE">N°</b>?</h2>
                         <div class="alert-button">                            
-                            <input type="submit" value="Cancelar" class="okButton cancelButton btnCancelEditBedroom" id="aboton">
-                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton">
+                            <input type="submit" value="Cancelar" class="okButton cancelButton btnCancelEditBedroom" id="aboton-bedroom">
+                            <input type="submit" value="Eliminar" class="okButton exitButton" id="eboton-bedroom">
                         </div>
                     </div>
                 </div>
@@ -507,5 +479,6 @@
     <script src="js/main.js"></script>
     <script src="js/signoff.js"></script>
     <script src="js/CRUD/hosted.js"></script>
+    <script src="js/CRUD/bedroom.js"></script>
 </body>
 </html>

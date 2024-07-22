@@ -152,6 +152,7 @@ body {
     display: flex;
     margin-top: 1rem;
     gap: 1rem;
+    position: relative;
 }
 
 .lists-bedrooms {
@@ -658,8 +659,7 @@ th{
 }
 
 .warning {
-    border-color: #d5e100;
-    background-color: #fdffe0;
+    color: #ff1c1c;
 }
 
 /* HOSTED EDIT | MODAL ----------- */
