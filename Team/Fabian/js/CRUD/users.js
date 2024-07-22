@@ -15,6 +15,20 @@ const ValidationUser = (id) => {
     } else { return inpt.value };
 };
 
+//validar error en editar
+const ValidationEditUser = (inpt) => {
+    if (inpt.value.trim() === '') {
+        inpt.classList.add('error');
+        inpt.setAttribute('placeholder', 'Campo vacío');
+
+        setTimeout(() => {
+            inpt.classList.remove('error');
+            inpt.setAttribute('placeholder', '');
+        }, 2000);
+
+    } else { return inpt.value };
+};
+
 const CleanInptsUser = () => {
     const intps = document.querySelectorAll('.addU');
     
@@ -65,6 +79,7 @@ const AddUser = () => {
 const EditUserEvent = (id) => {
     const MotalEdit = document.querySelector('.edit-user');
     const btnEditCancel = document.getElementById('btnCancelEditUser');
+    const saveUser = document.querySelector('#editButtonUsuario'); //agregar boton
 
     const username = document.getElementById('username-edit');
     const typeuser = document.getElementById('typeuser-edit');
@@ -86,6 +101,24 @@ const EditUserEvent = (id) => {
             password.value = h.password;
         };
     });
+
+    saveUser.onclick = () => {
+        if (ValidationEditUser(username) && ValidationEditUser(typeuser) && ValidationEditUser(email) && ValidationEditUser(password)) {
+            USERS.forEach(h => {
+                if (h.id === id) {
+                    console.log(h.id, h.username, h.password);
+                    
+                    h.username = ValidationEditUser(username);
+                    h.rol = ValidationEditUser(typeuser);
+                    h.email = ValidationEditUser(email);
+                    h.password = ValidationEditUser(password);
+                };
+            });
+
+            MotalEdit.classList.remove('active');
+            DataTableUser();
+        }
+    };
 };
 
 // Eliminar Usuarios ---------------------------
