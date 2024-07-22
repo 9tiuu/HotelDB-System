@@ -15,6 +15,20 @@ const ValidationBedroom = (id) => {
     } else { return inpt.value };
 };
 
+//validar error en editar
+const ValidationEdit = (inpt) => {
+    if (inpt.value.trim() === '') {
+        inpt.classList.add('error');
+        inpt.setAttribute('placeholder', 'Campo vacío');
+
+        setTimeout(() => {
+            inpt.classList.remove('error');
+            inpt.setAttribute('placeholder', '');
+        }, 2000);
+
+    } else { return inpt.value };
+}
+
 const CleanInptsBedroom = () => {
     const intps = document.querySelectorAll('.inptH');
     
@@ -82,6 +96,7 @@ const AddBedroom = () => {
 const EditbedroomEvent = (num) => {
     const MotalEdit = document.querySelector('.edit-bedroom');
     const btnEditCancel = document.querySelector('.b-btnECancel');
+    const btnEditGuardar= document.querySelector('#editButton');//agregar boton
 
     const numhabit = document.getElementById('edit-num');
     const responsable = document.getElementById('edit-responsable');
@@ -94,6 +109,7 @@ const EditbedroomEvent = (num) => {
     const orientacion = document.getElementById('edit-orientacion')
 
     MotalEdit.classList.add('active');
+    numhabit.disabled = true;
 
     btnEditCancel.addEventListener('click', () => {
         MotalEdit.classList.remove('active');
@@ -114,6 +130,29 @@ const EditbedroomEvent = (num) => {
             orientacion.value = h.orientation;
         };
     });
+
+    //actualizar
+    btnEditGuardar.onclick = () => {
+        if (ValidationEdit(responsable) &&  ValidationEdit(fecha) && ValidationEdit(capacidad) && ValidationEdit(precio) && ValidationEdit(pasajerosp) && ValidationEdit(estado) && ValidationEdit(orientacion)) {
+            HABITACIONES.forEach(h => {
+                if (h.number === parseInt(num)) {
+                    console.log(h.number, h.responsable, h.precio);
+                    
+                    h.responsable= ValidationEdit(responsable);
+                    h.fecha = ValidationEdit(fecha);
+                    h.capacidad = ValidationEdit(capacidad);
+        
+                    h.precio = ValidationEdit(precio);
+                    h.pasajeros = ValidationEdit(pasajerosp);
+                    h.estado = ValidationEdit(estado);
+                    h.orientation = ValidationEdit(orientacion);
+                };
+            });
+
+            MotalEdit.classList.remove('active');
+            DataTableBedroom();
+        }
+    };
 };
 
 // Eliminar Habitacion ---------------------------
@@ -133,7 +172,7 @@ const DeletebedroomEvent = (num) => {
 
     btnEliminar.addEventListener('click', () => {
         ModalDelete.classList.remove('active');    
-        HABITACIONES = HABITACIONES.filter(h=>h.number!=num);
+        HABITACIONES = HABITACIONES.filter(h => h.number != num);
         
         DataTableBedroom();
         console.log(HABITACIONES);

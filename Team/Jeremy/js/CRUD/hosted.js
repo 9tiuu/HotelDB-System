@@ -15,6 +15,20 @@ const ValidationHosted = (id) => {
     } else { return inpt.value };
 };
 
+//validar error en editar
+const ValidationEditHosted = (inpt) => {
+    if (inpt.value.trim() === '') {
+        inpt.classList.add('error');
+        inpt.setAttribute('placeholder', 'Campo vacío');
+
+        setTimeout(() => {
+            inpt.classList.remove('error');
+            inpt.setAttribute('placeholder', '');
+        }, 2000);
+
+    } else { return inpt.value };
+};
+
 const CleanInptsHosted = () => {
     const intps = document.querySelectorAll('.addP');
     
@@ -75,6 +89,7 @@ const AddHosted = () => {
 const EditHostedEvent = (id) => {
     const MotalEdit = document.querySelector('.edit-hosted');
     const btnEditCancel = document.getElementById('btnCancelEdit');
+    const saveHosted = document.querySelector('#editButtonPasajero'); //agregar boton
 
     const namep = document.getElementById('edit-namep');
     const lastname = document.getElementById('edit-lastname');
@@ -96,6 +111,24 @@ const EditHostedEvent = (id) => {
             bedroom.value = h.bedroom;
         };
     });
+
+    saveHosted.onclick = () => {
+        if (ValidationEditHosted(namep) && ValidationEditHosted(lastname) && ValidationEditHosted(rut) && ValidationEditHosted(bedroom)) {
+            HOSTEDS.forEach(h => {
+                if (h.id === id) {
+                    console.log(h.id, h.name, h.rut);
+                    
+                    h.name = ValidationEditHosted(namep);
+                    h.lastname = ValidationEditHosted(lastname);
+                    h.rut = ValidationEditHosted(rut);
+                    h.bedroom = ValidationEditHosted(bedroom);
+                };
+            });
+
+            MotalEdit.classList.remove('active');
+            DataTableHosted();
+        }
+    };
 };
 
 // Eliminar pasajeros ---------------------------
