@@ -23,7 +23,7 @@ const CleanInptsHosted = () => {
     });
 };
 
-const HOSTEDS = ['HostedList'];
+let HOSTEDS = [];
 let hostedID = 1;
 
 // Agregar pasajeros ---------------------------
@@ -94,6 +94,9 @@ const EditHostedEvent = (id) => {
             lastname.value = h.lastname;
             rut.value = h.rut;
             bedroom.value = h.bedroom;
+
+            const asd = USERS.find(u => u.id === id);
+            console.log(asd);
         };
     });
 };
@@ -114,17 +117,52 @@ const DeleteHostedEvent = (id) => {
     });
 
     btnEliminar.addEventListener('click', () => {
-        const tr = document.getElementById('hosted_' + id);
         ModalDelete.classList.remove('active');    
-           
-        tbodyHosted.removeChild(tr);
+        HOSTEDS = HOSTEDS.filter(h => h.id != id);
+
+        DataTableHosted();
         console.log(HOSTEDS);
     });
 };
 
+// Buscar Pasajeros ---------------------------
+
+const findHosted = document.getElementById('buscarpasajeros');
+
+findHosted.addEventListener('input', (event) => {
+    if (event.target.value === '') {
+        DataTableHosted();
+
+    } else {
+        tbodyHosted.innerHTML = '';
+        let newHOSTEDS = HOSTEDS.filter(h => h.name === event.target.value);
+        
+        newHOSTEDS.forEach(h => {
+            const tr = document.createElement('tr');
+            tr.setAttribute('id', `hosted_${h.id}`);
+
+            tr.innerHTML = `
+                <td>${h.id}</td>
+                <td>${h.name}</td>
+                <td>${h.lastname}</td>
+                <td>${h.rut}</td>
+                <td>${h.bedroom}</td>
+                <td class="buttons">
+                    <button type="button" onclick="EditHostedEvent(${h.id})" class="actualizar h-update">Editar</button>
+                    <button type="button" onclick="DeleteHostedEvent(${h.id})" class="eliminar h-delete">Eliminar</button>
+                </td>
+            `;
+
+            tbodyHosted.appendChild(tr);
+        });
+    };
+});
+
 const DataTableHosted = () => {
-    const tr = document.createElement('tr');
+    tbodyHosted.innerHTML = '';
+
     HOSTEDS.forEach(h => {
+        const tr = document.createElement('tr');
         tr.setAttribute('id', `hosted_${h.id}`);
 
         tr.innerHTML = `

@@ -132,16 +132,16 @@ const DeletebedroomEvent = (num) => {
     });
 
     btnEliminar.addEventListener('click', () => {
-        const tr = document.getElementById('bedroom_' + num);
         ModalDelete.classList.remove('active');    
-        HABITACIONES=HABITACIONES.filter(h=>h.number!=num);
-        // tbodyBedroom.removeChild(tr);
+        HABITACIONES = HABITACIONES.filter(h=>h.number!=num);
+        
         DataTableBedroom();
         console.log(HABITACIONES);
     });
 };
 
-//Buscar Habitacion
+// Buscar Habitacion ---------------------------
+
 document.querySelector('#inpBusqueda').addEventListener('input', (event)=>{
     if(event.target.value===''){
         console.log('busquedavacia');

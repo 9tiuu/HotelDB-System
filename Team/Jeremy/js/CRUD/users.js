@@ -1,4 +1,4 @@
-const tbodyHosted = document.querySelector('.user-tbody');
+const tbodyUser = document.querySelector('.user-tbody');
 
 const ValidationUser = (id) => {
     const inpt = document.getElementById(id + '-user');
@@ -23,7 +23,7 @@ const CleanInptsUser = () => {
     });
 };
 
-const USERS = ['UserList'];
+let USERS = [];
 let userID = 1;
 
 // Agregar pasajeros ---------------------------
@@ -104,18 +104,52 @@ const DeleteUserEvent = (id) => {
     });
 
     btnEliminar.addEventListener('click', () => {
-        const tr = document.getElementById('user_' + id);
         ModalDelete.classList.remove('active');    
-           
-        // USERS.splice(id, 1);
-        console.log(USERS);
-        tbodyHosted.removeChild(tr);      
+        USERS = USERS.filter(h => h.id != id);
+
+        DataTableUser();
+        console.log(USERS);    
     });
 };
 
+// Buscar Usuarios ---------------------------
+
+const findUser = document.getElementById('buscarusuarios');
+
+findUser.addEventListener('input', (event) => {
+    if (event.target.value === '') {
+        DataTableUser();
+
+    } else {
+        tbodyUser.innerHTML = '';
+        let newUSERS = USERS.filter(u => u.username == event.target.value);
+
+        newUSERS.forEach(h => {
+            const tr = document.createElement('tr');
+            tr.setAttribute('id', `user_${h.id}`);
+
+            tr.innerHTML = `
+                <td>${h.id}</td>
+                <td>${h.username}</td>
+                <td>${h.rol}</td>
+                <td>${h.email}</td>
+                <td>${h.password}</td>
+                <td class="buttons">
+                    <button type="button" onclick="EditUserEvent(${h.id})" class="actualizar h-update">Editar</button>
+                    <button type="button" onclick="DeleteUserEvent(${h.id})" class="eliminar h-delete">Eliminar</button>
+                </td>
+            `;
+
+            tbodyUser.appendChild(tr);
+        });
+    };   
+});
+
 const DataTableUser = () => {
-    const tr = document.createElement('tr');
-    USERS.forEach(function(h) {
+    tbodyUser.innerHTML = '';
+
+    USERS.forEach(h => {
+        const tr = document.createElement('tr');
         tr.setAttribute('id', `user_${h.id}`);
 
         tr.innerHTML = `
@@ -130,6 +164,6 @@ const DataTableUser = () => {
             </td>
         `;
 
-        tbodyHosted.appendChild(tr);
+        tbodyUser.appendChild(tr);
     });
 };

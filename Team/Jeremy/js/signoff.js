@@ -56,6 +56,6 @@ btnCreateBedroom.addEventListener('click', () => {
     ModalCreateBedroom.classList.add('active');
 });
 
-// btnCancelCreateBedroom.addEventListener('click', () => {
-//     ModalCreateBedroom.classList.remove('active');
-// });
+btnCancelCreateBedroom.addEventListener('click', () => {
+    ModalCreateBedroom.classList.remove('active');
+});
