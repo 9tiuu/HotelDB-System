@@ -109,6 +109,17 @@ body {
     cursor: pointer;
 }
 
+.terminos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminosycondiciones {
+    text-decoration: none;
+    font-size: 14px;
+}
+
 .login-button:hover {
     box-shadow: 0 8px 20px 0 rgb(209, 181, 255);
     background: #131313;
