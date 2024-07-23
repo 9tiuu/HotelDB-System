@@ -202,6 +202,12 @@ body {
 
 .audit-data { padding: 0.5rem; }
 
+.auditorit {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
 .data-user {
     display: flex;
     justify-content: left;

@@ -67,7 +67,7 @@ const AddUser = () => {
 
             DataTableUser();
             CleanInptsUser();
-
+            registroUser(userUsername)
             userID += 1;
             UserCreateModal.classList.remove('active');
         };
@@ -117,6 +117,7 @@ const EditUserEvent = (id) => {
 
             MotalEdit.classList.remove('active');
             DataTableUser();
+            ediUser(username.value)
         }
     };
 };
@@ -137,11 +138,14 @@ const DeleteUserEvent = (id) => {
     });
 
     btnEliminar.addEventListener('click', () => {
+        const paratomarusuario = USERS.find(h => h.id == id);
         ModalDelete.classList.remove('active');    
         USERS = USERS.filter(h => h.id != id);
 
         DataTableUser();
         console.log(USERS);    
+        registroEli(paratomarusuario.username)
+        
     });
 };
 
@@ -200,3 +204,63 @@ const DataTableUser = () => {
         tbodyUser.appendChild(tr);
     });
 };
+
+
+const auditoriaA = document.querySelector('.audit-data');
+
+const registroUser = (username) =>{
+    const diayhota = new Date();
+    const total = diayhota.toLocaleString();
+    const resgistrousuario = document.createElement("div");
+    
+    resgistrousuario.classList.add("data-user", "user-add-data")
+
+    resgistrousuario.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill-add adduser" viewBox="0 0 16 16">
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+        </svg> <p>Se ha creado un nuevo usuario: <b class="user-name-data">${username}</b></p><p class="info-data">${total}</p>
+        
+        `;
+    
+    // auditoriaA.appendChild(resgistrousuario) para que aparesca arriba
+    const firstChild = auditoriaA.firstChild;
+    auditoriaA.insertBefore(resgistrousuario, firstChild)
+}
+
+const ediUser = (username) =>{
+    const diayhota = new Date();
+    const total = diayhota.toLocaleString();
+    const editouser = document.createElement("div");
+    
+    editouser.classList.add("data-user", "user-edit-data")
+
+    editouser.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill-gear edituser" viewBox="0 0 16 16">
+            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+        </svg> <p>Se han modificado los datos del usuario: <b class="user-name-data">${username}</b></p> <p class="info-data">${total}</p>
+        `;
+    // auditoriaA.appendChild(editouser)
+    const firstChild = auditoriaA.firstChild;
+    auditoriaA.insertBefore(editouser, firstChild)
+}
+
+
+const registroEli = (username) => {
+    const diayhota = new Date();
+    const total = diayhota.toLocaleString();
+    const registroEliminar = document.createElement("div");
+    
+    registroEliminar.classList.add("data-user", "user-delete-data")
+
+    registroEliminar.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill-x deleteuser" viewBox="0 0 16 16">
+            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m-.646-4.854.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 0 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 .708-.708"/>
+        </svg> <p>Se ha eliminado el usuario: <b class="user-name-data">${username}</b></p> <p class="info-data">${total}</p>
+        `;
+    // auditoriaA.appendChild(registroEliminar)
+    const firstChild = auditoriaA.firstChild;
+    auditoriaA.insertBefore(registroEliminar, firstChild)
+};
+
