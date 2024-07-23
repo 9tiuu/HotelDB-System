@@ -1,5 +1,6 @@
 const tbodyBedroom = document.querySelector('.CrearH');
 const tbodyTransaction = document.querySelector('.transaction-tbody');
+const tbodyHistorial=document.querySelector('.Historial');
 
 const ValidationBedroom = (id) => {
     const inpt = document.getElementById(id + 'Help');
@@ -40,6 +41,7 @@ const CleanInptsBedroom = () => {
 
 let HABITACIONES = [];
 let TRANSACTIONS = [];
+let HISTORIAL=[];
 let habitID = 1;
 
 // Agregar Habitaciones ---------------------------
@@ -76,6 +78,14 @@ const AddBedroom = () => {
         total: totalTransaction
     };
 
+    const registro={
+        number:parseInt(bednumber),
+        orientation:bedroom.orientation,
+        capacidad: bedroom.capacidad,
+        pasajeros:bedroom.pasajeros,
+        precio: bedroom.precio
+    };
+
     if (bednumber && bedcapacidad && bedprecio && bedestado && bedorientacion) {
 
         const findNumber = HABITACIONES.find(h => h.number === parseInt(bednumber));
@@ -83,12 +93,13 @@ const AddBedroom = () => {
         if (!findNumber) {
             HABITACIONES.push(bedroom);
             TRANSACTIONS.push(transaction);
+            HISTORIAL.push(registro);
             console.log(HABITACIONES);
             console.log(TRANSACTIONS);
-
+            console.log(HISTORIAL);
             DataTableBedroom();
             CleanInptsBedroom();
-
+            DataTableRecord();
             habitID += 1;
             BedCreateModal.classList.remove('active');
 
@@ -175,6 +186,17 @@ const EditbedroomEvent = (num) => {
                                 DataTableTransaction();
                             };
                         };
+                    });
+
+                    HISTORIAL.forEach(t => {
+                        if (t.pasajeros === h.pasajeros) {
+                            t.number = h.number;
+                            t.orientacion = h.orientacion;
+                            t.cantidad = h.capacidad;
+                            t.pasajeros = h.pasajeros;
+                            t.precio = h.precio;
+                        };
+                        DataTableRecord();
                     });
                 };
             });
@@ -342,4 +364,24 @@ const DeleteTransactionEvent = (num) => {
         DataTableTransaction();
         console.log(TRANSACTIONS);
     });
+};
+
+/////////////////// Historial de habitacion ///////////////////
+
+const DataTableRecord = ()=>{
+    tbodyHistorial.innerHTML='';
+    HABITACIONES.forEach(h=>{
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+            <td>${h.number}</td>
+            <td>${h.orientation}</td>
+            <td>${h.capacidad}</td>
+            <td>${h.pasajeros}</td>
+            <td>$${h.precio}</td>
+        `;
+        
+        tbodyHistorial.appendChild(tr);
+    });
+    
 };
