@@ -155,10 +155,11 @@ const DeleteUserEvent = (id) => {
 
     btnEliminar.addEventListener('click', () => {
         ModalDelete.classList.remove('active');
+        const finduser = USERS.find(u => u.id == id);
         USERS = USERS.filter(h => h.id != id);
 
         DataTableUser();
-        deleteUserRecord(USERS.username); // Undefined
+        deleteUserRecord(finduser.username); // Undefined
         console.log(USERS);   
     });
 };
