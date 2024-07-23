@@ -141,7 +141,7 @@ const DeleteUserEvent = (id) => {
         USERS = USERS.filter(h => h.id != id);
 
         DataTableUser();
-        console.log(USERS);    
+        console.log(USERS);   
     });
 };
 

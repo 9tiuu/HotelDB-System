@@ -1,4 +1,5 @@
 const tbodyBedroom = document.querySelector('.CrearH');
+const tbodyTransaction = document.querySelector('.transaction-tbody');
 
 const ValidationBedroom = (id) => {
     const inpt = document.getElementById(id + 'Help');
@@ -38,6 +39,7 @@ const CleanInptsBedroom = () => {
 };
 
 let HABITACIONES = [];
+let TRANSACTIONS = [];
 let habitID = 1;
 
 // Agregar Habitaciones ---------------------------
@@ -64,13 +66,25 @@ const AddBedroom = () => {
         orientation:bedorientacion
     };
 
+    let totalTransaction = bedcapacidad * bedprecio;
+
+    const transaction = {
+        number: parseInt(bednumber),
+        responsable: bedroom.responsable,
+        cantidad: bedroom.capacidad,
+        precio: bedroom.precio,
+        total: totalTransaction
+    };
+
     if (bednumber && bedcapacidad && bedprecio && bedestado && bedorientacion) {
 
         const findNumber = HABITACIONES.find(h => h.number === parseInt(bednumber));
 
         if (!findNumber) {
             HABITACIONES.push(bedroom);
+            TRANSACTIONS.push(transaction);
             console.log(HABITACIONES);
+            console.log(TRANSACTIONS);
 
             DataTableBedroom();
             CleanInptsBedroom();
@@ -146,12 +160,28 @@ const EditbedroomEvent = (num) => {
                     h.pasajeros = ValidationEdit(pasajerosp);
                     h.estado = ValidationEdit(estado);
                     h.orientation = ValidationEdit(orientacion);
+
+                    TRANSACTIONS.forEach(t => {
+                        if (t.number === h.number) {
+                            t.number = h.number;
+                            t.responsable = h.responsable;
+                            t.cantidad = h.capacidad;
+                            t.precio = h.precio;
+                            t.total = h.capacidad * h.precio;
+                        };
+
+                        if (t.responsable === h.responsable) {
+                            if (t.responsable !== 'Definir al crear') {
+                                DataTableTransaction();
+                            };
+                        };
+                    });
                 };
             });
 
             MotalEdit.classList.remove('active');
-            DataTableBedroom();
-        }
+            DataTableBedroom();  
+        };
     };
 };
 
@@ -172,7 +202,7 @@ const DeletebedroomEvent = (num) => {
 
     btnEliminar.addEventListener('click', () => {
         ModalDelete.classList.remove('active');    
-        HABITACIONES = HABITACIONES.filter(h => h.number != num);
+        HABITACIONES = HABITACIONES.filter(h => h.number !== num);
         
         DataTableBedroom();
         console.log(HABITACIONES);
@@ -226,7 +256,7 @@ const DataTableBedroom = () => {
             <td>${h.responsable}</td>
             <td>${h.fecha}</td>
             <td>${h.capacidad}</td>
-            <td>${h.precio}</td>
+            <td>$${h.precio}</td>
             <td>${h.pasajeros}</td>
             <td>${h.estado}</td>
             <td>${h.orientation}</td>
@@ -237,5 +267,79 @@ const DataTableBedroom = () => {
         `;
 
         tbodyBedroom.appendChild(tr);
+    });
+};
+
+/////////////////// Transaccion de Habitaciones ///////////////////
+
+const DataTableTransaction = () => {
+    tbodyTransaction.innerHTML = '';
+
+    TRANSACTIONS.forEach(t => {
+        const tr = document.createElement('tr');
+        tr.setAttribute('id', `transaction_${t.number}`);
+
+        tr.innerHTML = `
+            <td>${t.number}</td>
+            <td>${t.responsable}</td>
+            <td>${t.cantidad}</td>
+            <td>$${t.precio}</td>
+            <td>$${t.total}</td>
+            <td class="buttons">
+                <button type="button" class="eliminar t-delete" onclick="DeleteTransactionEvent(${t.number})">Eliminar</button>
+            </td>
+        `;
+
+        tbodyTransaction.appendChild(tr);
+    });
+};
+
+// Buscar Transaccion ---------------------------
+
+document.getElementById('buscarResponsable').addEventListener('input', (event) => {
+    if (event.target.value == '') {
+        DataTableTransaction();
+
+    } else {
+        tbodyTransaction.innerHTML = '';
+        let newTransaction = TRANSACTIONS.filter(t => t.responsable == event.target.value);
+        
+        newTransaction.forEach(t => {
+            const tr = document.createElement('tr');
+            tr.setAttribute('id', `transaction_${t.number}`);
+
+            tr.innerHTML = `
+                <td>${t.number}</td>
+                <td>${t.responsable}</td>
+                <td>${t.cantidad}</td>
+                <td>$${t.precio}</td>
+                <td>$${t.total}</td>
+                <td class="buttons">
+                    <button type="button" class="eliminar t-delete" onclick="DeleteTransactionEvent(${t.number})">Eliminar</button>
+                </td>
+            `;
+
+            tbodyTransaction.appendChild(tr);
+        });
+    };
+});
+
+const DeleteTransactionEvent = (num) => {
+    const ModalDelete = document.querySelector(".delete-transaction");
+    const botonCancelar = document.getElementById("aboton-transaction");
+    const btnEliminar = document.getElementById('eboton-transaction');
+
+    ModalDelete.classList.add('active');
+
+    botonCancelar.addEventListener('click', () => {
+        ModalDelete.classList.remove('active');
+    });
+
+    btnEliminar.addEventListener('click', () => {
+        ModalDelete.classList.remove('active');    
+        TRANSACTIONS = TRANSACTIONS.filter(t => t.number !== num);
+        
+        DataTableTransaction();
+        console.log(TRANSACTIONS);
     });
 };

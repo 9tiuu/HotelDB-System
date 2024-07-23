@@ -165,7 +165,7 @@ findHosted.addEventListener('input', (event) => {
 
     } else {
         tbodyHosted.innerHTML = '';
-        let newHOSTEDS = HOSTEDS.filter(h => h.name === event.target.value);
+        let newHOSTEDS = HOSTEDS.filter(h => h.rut === event.target.value);
         
         newHOSTEDS.forEach(h => {
             const tr = document.createElement('tr');
